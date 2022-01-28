@@ -4,10 +4,11 @@ namespace _Game.Towers
 {
     public class EnergyTower : AbstractTower
     {
+        private EnergyData currentData;
+        private EnergyData CurrentData => currentData != null ? currentData : currentData = (EnergyData) currentAbstractData;
 
-        public void Generate()
-        {
-            Debug.Log($"Generating {10f} energy");
-        }
+        public float EnergyRate => CurrentData.EnergyRate;
+        
+        
     }
 }
