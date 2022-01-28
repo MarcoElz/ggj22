@@ -1,2 +1,2 @@
-# GGJ2022-Prototype
-# ggj22
+# GGJ22
+TODO: Add credits
