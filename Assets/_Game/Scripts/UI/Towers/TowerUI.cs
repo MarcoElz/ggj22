@@ -10,6 +10,8 @@ namespace _Game.UI.Towers
     public class TowerUI : FaderUI
     {
         [SerializeField] private float range = 5f;
+        [SerializeField] private SpecialActionButton specialActionButton = default;
+        [SerializeField] private GameObject deleteButton = default;
         
         private Camera cam;
         private Camera Cam => cam == null ? cam = Camera.main : cam;
@@ -62,6 +64,12 @@ namespace _Game.UI.Towers
             base.Show();
             currentTower = tower;
             isActive = true;
+
+            var uiData = currentTower.Data.UIData;
+            deleteButton.gameObject.SetActive(uiData.canBeDeleted);
+            
+            specialActionButton.gameObject.SetActive(uiData.hasSpecialAction);
+            specialActionButton.SetSprite(uiData.specialActionSprite);
         }
 
     }

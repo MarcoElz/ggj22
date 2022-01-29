@@ -1,4 +1,5 @@
 ﻿using _Game.ShopSystem;
+using _Game.UI.Utils;
 using UnityEngine;
 
 namespace _Game.Towers
@@ -13,12 +14,15 @@ namespace _Game.Towers
 
         [SerializeField] private AbstractSpecificTowerData[] upgradesData = default;
 
+        [SerializeField] private TowerUIData uiData;
+        
         public AbstractTower TowerPrefab => towerPrefab;
         public TowerLabel[] Labels => labels;
         public float EnergyCostPerSecond => energyCostPerSecond;
         public float ContaminationPerSecond => contaminationPerSecond;
         public AbstractSpecificTowerData[] UpgradesData => upgradesData;
         public Cost InitialCost => upgradesData[0].Cost;
-
+        
+        public TowerUIData UIData => uiData;
     }
 }

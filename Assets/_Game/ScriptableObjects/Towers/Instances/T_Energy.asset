@@ -18,3 +18,7 @@ MonoBehaviour:
   contaminationPerSecond: 0
   upgradesData:
   - {fileID: 11400000, guid: 72f4d8b9ae49f4b4da8a31cefd3624bf, type: 2}
+  uiData:
+    canBeDeleted: 1
+    hasSpecialAction: 0
+    specialActionSprite: {fileID: 0}

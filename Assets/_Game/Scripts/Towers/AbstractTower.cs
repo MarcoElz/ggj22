@@ -49,6 +49,8 @@ namespace _Game.Towers
             onUpgraded?.Invoke();
         }
 
+        public virtual void SpecialAction() { }
+
         protected virtual void OnUpgraded() { }
     }
 }
