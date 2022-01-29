@@ -1,4 +1,5 @@
 ﻿using System;
+using _Game.InputHelper;
 using _Game.Towers;
 using Unity.Mathematics;
 using UnityEngine;
@@ -9,8 +10,7 @@ namespace _Game.ShopSystem
     {
         [SerializeField] private Shop shop = default;
         [SerializeField] private Transform placeholder = default;
-        [SerializeField] private LayerMask layerMask = default;
-        
+
         public event Action<AbstractTower> onTowerCreated;
         public event Action<AbstractTower> onTowerDestroyed;
         
@@ -27,12 +27,8 @@ namespace _Game.ShopSystem
         {
             if(!IsBuilding) return;
 
-            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, layerMask))
-            {
-                placeholder.position = hit.point;
-            }
+            var position = MouseHelper.Instance.WorldPoint;
+            placeholder.position = position;
             
             if(Input.GetMouseButtonDown(0))
                 Build(currentBuildingData);
