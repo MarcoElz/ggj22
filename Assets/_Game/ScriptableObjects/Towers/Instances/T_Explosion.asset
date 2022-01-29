@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 812aee2d54b6480e91bcd7c526751ce3, type: 3}
-  m_Name: T_Shooter
+  m_Name: T_Explosion
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 789165100961285875, guid: 3fc237987f68d3847bc3b45afdaa7495, type: 3}
-  labels:
-  - {fileID: 11400000, guid: 9e1759bdda27ab6469ba5f53aaf16cad, type: 2}
+  towerPrefab: {fileID: 326338752448640357, guid: 3ae45a8b21fe7ef49b445ae98ff4720b, type: 3}
+  labels: []
   energyCostPerSecond: 1
   contaminationPerSecond: 0
   upgradesData:
-  - {fileID: 11400000, guid: 6db0d99949a17684b8899a8d2c637da2, type: 2}
+  - {fileID: 11400000, guid: 1f90148f0fd4d4842aa33c7c4def1cdd, type: 2}

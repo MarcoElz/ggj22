@@ -1,9 +1,7 @@
-﻿using System;
-using _Game.Creatures;
+﻿using _Game.Creatures;
 using _Game.Utils;
 using Ignita.Utils.Extensions;
 using Ignita.Utils.ObjectPool;
-using UnityEditor;
 using UnityEngine;
 
 namespace _Game.Towers
@@ -61,9 +59,10 @@ namespace _Game.Towers
         }
 
 
-        private void OnDrawGizmos()
+        private void OnDrawGizmosSelected()
         {
             EasyGizmos.DrawWireDisc(transform.position, Vector3.up, CurrentData.Range, Color.red);
         }
+        
     }
 }

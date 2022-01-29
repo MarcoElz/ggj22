@@ -1,5 +1,6 @@
 ﻿using System;
 using _Game.Creatures;
+using _Game.Utils;
 using Ignita.Utils.Extensions;
 using UnityEngine;
 
@@ -51,6 +52,11 @@ namespace _Game.Towers
         private void RefreshStats()
         {
             timeBetweenAttacks = 1f / CurrentData.AttackRate;
+        }
+        
+        private void OnDrawGizmosSelected()
+        {
+            EasyGizmos.DrawWireDisc(transform.position, Vector3.up, CurrentData.Range, Color.red);
         }
     }
 }

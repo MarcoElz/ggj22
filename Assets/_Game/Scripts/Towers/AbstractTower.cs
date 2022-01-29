@@ -7,15 +7,16 @@ namespace _Game.Towers
     {
         [SerializeField] private TowerGeneralData generalData = default;
 
-        private int upgradeLevel;
-        public bool HasNextUpgrade => upgradeLevel < generalData.UpgradesData.Length -1;
+        public TowerGeneralData Data => generalData;
+        public int UpgradeLevel { get; private set; }
+        public bool HasNextUpgrade => UpgradeLevel < generalData.UpgradesData.Length -1;
         public bool IsOn { get; private set; }
         
         public event Action onTurnedOn;
         public event Action onTurnedOff;
         public event Action onUpgraded;
 
-        protected AbstractSpecificTowerData currentAbstractData => generalData.UpgradesData[upgradeLevel];
+        protected AbstractSpecificTowerData currentAbstractData => generalData.UpgradesData[UpgradeLevel];
 
         protected virtual void OnEnable()
         {
@@ -43,7 +44,7 @@ namespace _Game.Towers
 
         public void Upgrade()
         {
-            upgradeLevel++;
+            UpgradeLevel++;
             onUpgraded();
             onUpgraded?.Invoke();
         }
