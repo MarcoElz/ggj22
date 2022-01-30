@@ -15,6 +15,7 @@ namespace _Game.InputHelper
         private Camera cam;
         private Camera Cam => cam == null ? cam = Camera.main : cam;
 
+        
         private void Awake()
         {
             Instance = this;
@@ -28,6 +29,15 @@ namespace _Game.InputHelper
             {
                 WorldPoint = hit.point;
             }
+        }
+
+        private void OnDrawGizmos()
+        {
+            var color = Color.blue;
+            color.a = 0.5f;
+            Gizmos.color = color;
+            
+            Gizmos.DrawSphere(WorldPoint, 0.10f);
         }
     }
 }

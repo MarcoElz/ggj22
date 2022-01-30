@@ -7,8 +7,10 @@ namespace _Game.Towers
     {
         [SerializeField] private TowerGeneralData[] unlockedTowers = default;
         [SerializeField] private TowerGeneralData[] specialTowers = default;
+        [SerializeField] private float buildRange = 10f;
 
         public TowerGeneralData[] UnlockedTowers => unlockedTowers;
         public TowerGeneralData[] SpecialTowers => specialTowers;
+        public override float Range => buildRange;
     }
 }

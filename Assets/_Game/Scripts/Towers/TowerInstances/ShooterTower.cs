@@ -12,7 +12,7 @@ namespace _Game.Towers
         [SerializeField] private Transform bulletOrigin = default;
         
         private ShooterData currentData;
-        private ShooterData CurrentData => currentData != null ? currentData : currentData = (ShooterData) currentAbstractData;
+        private ShooterData CurrentData => currentData != null ? currentData : currentData = (ShooterData) CurrentAbstractData;
 
         private float timeBetweenAttacks;
         private float timeOfLastAttack;

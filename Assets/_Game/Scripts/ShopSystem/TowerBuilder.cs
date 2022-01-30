@@ -2,6 +2,8 @@
 using _Game.GameActions;
 using _Game.InputHelper;
 using _Game.Towers;
+using _Game.UI.Towers;
+using _Game.UI.Utils;
 using Ignita.Utils.Extensions;
 using Unity.Mathematics;
 using UnityEngine;
@@ -14,6 +16,7 @@ namespace _Game.ShopSystem
         [SerializeField] private Transform placeholder = default;
         [SerializeField] private BuyAction buyAction = default;
         [SerializeField] private DeleteAction deleteAction = default;
+        [SerializeField] private DistanceCircleUI rangeUI = default;
         
         public event Action<AbstractTower> onTowerCreated;
         public event Action<AbstractTower> onTowerDestroyed;
@@ -38,7 +41,7 @@ namespace _Game.ShopSystem
 
             var canBuildInPosition = CanBuildInPosition(position);
             
-            //TODO: Cange color placeholder
+            //TODO: Change color placeholder
             
             if(canBuildInPosition && Input.GetMouseButtonDown(0))
                 Build(currentBuildingData);
@@ -47,17 +50,29 @@ namespace _Game.ShopSystem
 
         private bool CanBuildInPosition(Vector3 position)
         {
-            var isOverUI = EventSystem.current.IsPointerOverGameObject();
-            if (isOverUI)
-                return false;
+            if (IsOverUI()) return false;
+            if (!IsInsideBaseRange(position)) return false;
+            if (IsCollidingWithOtherTower(position)) return false;
 
+            return true;
+        }
+        
+        private bool IsOverUI() =>EventSystem.current.IsPointerOverGameObject();
+
+        private bool IsInsideBaseRange(Vector3 position)
+        {
+            var sqrDistanceToBase = Vector3.SqrMagnitude(position - Global.MainTower.transform.position);
+            var range = Global.MainTower.CurrentAbstractData.Range;
+            var isInsideBaseRange = sqrDistanceToBase < range * range;
+            return isInsideBaseRange;
+        }
+
+        private bool IsCollidingWithOtherTower(Vector3 position)
+        {
             var closestTower = TowersManager.Instance.Elements.GetClosestElementInRange(position, 2f);
             var isOtherTowerTooNear = closestTower != null;
 
-            if (isOtherTowerTooNear)
-                return false;
-
-            return true;
+            return isOtherTowerTooNear;
         }
 
         public void TryBuildMode(TowerGeneralData towerData)
@@ -79,6 +94,7 @@ namespace _Game.ShopSystem
         {
             IsBuilding = true;
             placeholder.gameObject.SetActive(true);
+            rangeUI.Init(Global.MainTower.transform.position, Global.MainTower.CurrentAbstractData.Range);
         }
 
         public void StopBuilding()
@@ -86,6 +102,7 @@ namespace _Game.ShopSystem
             IsBuilding = false;
             currentBuildingData = null;
             placeholder.gameObject.SetActive(false);
+            rangeUI.Hide();
         }
 
         public void RemoveTower(AbstractTower tower)

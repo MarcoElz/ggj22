@@ -20,7 +20,9 @@ MonoBehaviour:
       amount: -5
     - resource: {fileID: 11400000, guid: b83ddaf62256eea479574f2c83c80194, type: 2}
       amount: 0
+  maxHealth: 100
+  newPrefab: {fileID: 0}
   range: 7
-  damage: 10
+  damage: 20
   attackRate: 1
   bulletPrefab: {fileID: 6628729620009440726, guid: 56160e93410dd264ca3ead4b80257d9a, type: 3}

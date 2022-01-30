@@ -9,7 +9,7 @@ namespace _Game.Towers
     public class AreaDamageTower : AbstractTower
     {
         private AreaDamageData currentData;
-        private AreaDamageData CurrentData => currentData != null ? currentData : currentData = (AreaDamageData) currentAbstractData;
+        private AreaDamageData CurrentData => currentData != null ? currentData : currentData = (AreaDamageData) CurrentAbstractData;
 
         private float timeBetweenAttacks;
         private float timeOfLastAttack;

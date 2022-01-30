@@ -35,7 +35,8 @@ namespace _Game.Creatures
 
         protected virtual void Dead()
         {
-            Destroy(gameObject);
+            Global.Dropper.AlertToDrop(transform.position);
+            PoolManager.ReturnToPool(this);
         }
 
         protected virtual void Initialize()

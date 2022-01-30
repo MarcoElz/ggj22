@@ -15,6 +15,7 @@ namespace _Game.UI.Towers
 
         [Header("References")] 
         [SerializeField] private TransactionUi transaction = default;
+        [SerializeField] private DistanceCircleUI rangeUI = default;
         [SerializeField] private SpecialActionButton specialActionButton = default;
         [SerializeField] private GameObject deleteButton = default;
         [SerializeField] private UIBar bar = default;
@@ -88,8 +89,8 @@ namespace _Game.UI.Towers
 
         public void Init(AbstractTower tower)
         {
-            base.Show();
             currentTower = tower;
+            base.Show();
             isActive = true;
 
             var uiData = currentTower.Data.UIData;
@@ -100,6 +101,18 @@ namespace _Game.UI.Towers
             
             foreach (var button in actionButtons) 
                 button.OnShow(tower);
+        }
+
+        protected override void OnShow()
+        {
+            base.OnShow();
+            rangeUI.Init(currentTower.transform.position, currentTower.CurrentAbstractData.Range);
+        }
+
+        protected override void OnHide()
+        {
+            base.OnHide();
+            rangeUI.Hide();
         }
 
         private void OnActionButtonEntered(AbstractAction action)

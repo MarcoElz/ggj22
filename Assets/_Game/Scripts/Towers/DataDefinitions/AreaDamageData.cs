@@ -9,7 +9,7 @@ namespace _Game.Towers
         [SerializeField] private int damage = 10;
         [SerializeField] private float attackRate = 1f;
 
-        public float Range => range;
+        public override float Range => range;
         public int Damage => damage;
         public float AttackRate => attackRate;
     }

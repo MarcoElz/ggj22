@@ -14,8 +14,8 @@ namespace _Game.Towers
         public bool IsOn { get; private set; }
 
         public float Health { get; private set; }
-        public float MaxHealth => currentAbstractData.MaxHealth;
-        public float HealthPercentage => Health / currentAbstractData.MaxHealth;
+        public float MaxHealth => CurrentAbstractData.MaxHealth;
+        public float HealthPercentage => Health / CurrentAbstractData.MaxHealth;
         public bool IsAlive => Health > 0f;
 
         public float TimeSinceSpawn => Time.time - timeOfSpawn;
@@ -25,7 +25,7 @@ namespace _Game.Towers
         public event Action onUpgraded;
         public event Action<float, float> onHealthChanged;
 
-        protected AbstractSpecificTowerData currentAbstractData => generalData.UpgradesData[UpgradeLevel];
+        public AbstractSpecificTowerData CurrentAbstractData => generalData.UpgradesData[UpgradeLevel];
 
         private float timeOfSpawn;
 
@@ -77,13 +77,13 @@ namespace _Game.Towers
                 Dead();
             }
             
-            onHealthChanged?.Invoke(Health, currentAbstractData.MaxHealth);
+            onHealthChanged?.Invoke(Health, CurrentAbstractData.MaxHealth);
         }
 
         public void RestoreHealth()
         {
-            Health = currentAbstractData.MaxHealth;
-            onHealthChanged?.Invoke(Health, currentAbstractData.MaxHealth);
+            Health = CurrentAbstractData.MaxHealth;
+            onHealthChanged?.Invoke(Health, CurrentAbstractData.MaxHealth);
         }
         
 
@@ -92,6 +92,12 @@ namespace _Game.Towers
         protected virtual void OnUpgraded()
         {
             RestoreHealth();
+
+            if (CurrentAbstractData.NewPrefab != null)
+            {
+                Destroy(transform.GetChild(0));
+                Instantiate(CurrentAbstractData.NewPrefab, transform);
+            }
         }
 
         private void Dead()
