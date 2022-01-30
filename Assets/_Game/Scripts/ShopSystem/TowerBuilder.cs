@@ -6,6 +6,7 @@ using _Game.Towers;
 using _Game.UI.Towers;
 using _Game.UI.Utils;
 using Ignita.Utils.Extensions;
+using Ignita.Utils.ObjectPool;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -20,6 +21,8 @@ namespace _Game.ShopSystem
         [SerializeField] private BuyAction buyAction = default;
         [SerializeField] private DeleteAction deleteAction = default;
         [SerializeField] private DistanceCircleUI rangeUI = default;
+        [SerializeField] private TimeParticles buildParticles = default;
+        [SerializeField] private TimeParticles removeParticles = default;
 
         private List<AntennaTower> antennas;
 
@@ -175,6 +178,8 @@ namespace _Game.ShopSystem
             //Radar stuff
             if(tower is AntennaTower antenna)
                 antennas.Remove(antenna);
+            
+            PoolManager.Spawn(removeParticles, tower.transform.position, Quaternion.identity);
         }
 
         private void Build(TowerGeneralData data)
@@ -184,6 +189,8 @@ namespace _Game.ShopSystem
             
             var tower = Instantiate(data.TowerPrefab, placeholder.transform.position, quaternion.identity);
             tower.TurnOn();
+
+            PoolManager.Spawn(buildParticles, tower.transform.position, Quaternion.identity);
             
             onTowerCreated?.Invoke(tower);
 

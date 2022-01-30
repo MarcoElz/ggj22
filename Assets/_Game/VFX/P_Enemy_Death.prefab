@@ -9858,6 +9858,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2634617986618573030}
+  - component: {fileID: 5417032046544662148}
   m_Layer: 0
   m_Name: P_Enemy_Death
   m_TagString: Untagged
@@ -9881,3 +9882,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5417032046544662148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6023483724295763933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe3ed3a6e3f4d44860cb2eb8b908651, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToDestroy: 2

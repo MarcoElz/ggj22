@@ -8,7 +8,8 @@ namespace _Game.Creatures
     public class AbstractCreature : MonoBehaviour, IDamageable, IPoolObject
     {
         [SerializeField] protected float startHealth = 100;
-        
+        [SerializeField] protected TimeParticles deadParticles = default;
+            
         public float Health { get; protected set; }
 
         protected virtual void Awake()
@@ -35,6 +36,7 @@ namespace _Game.Creatures
 
         protected virtual void Dead()
         {
+            PoolManager.Spawn(deadParticles, transform.position, Quaternion.identity);
             Global.Dropper.AlertToDrop(transform.position);
             PoolManager.ReturnToPool(this);
         }

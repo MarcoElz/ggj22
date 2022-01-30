@@ -1,5 +1,6 @@
 ﻿using _Game.ShopSystem;
 using _Game.Towers;
+using Ignita.Utils.ObjectPool;
 using UnityEngine;
 
 namespace _Game.GameActions
@@ -7,6 +8,7 @@ namespace _Game.GameActions
     [CreateAssetMenu(fileName = "Upgrade", menuName = "_Game/Actions/Upgrade", order = 1)]
     public class UpgradeAction : AbstractAction
     {
+        [SerializeField] private TimeParticles upgradeParticles = default;
         public override Transaction GetTransaction(AbstractTower tower)
         {
             return tower.Data.UpgradesData[tower.UpgradeLevel].Transaction;
@@ -21,6 +23,7 @@ namespace _Game.GameActions
         protected override void DoAction(AbstractTower tower)
         {
             tower.Upgrade();
+            PoolManager.Spawn(upgradeParticles, tower.transform.position, Quaternion.identity);
         }
 
         // public override bool CanDoAction(AbstractTower tower)
