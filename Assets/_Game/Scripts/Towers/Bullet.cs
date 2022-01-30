@@ -35,7 +35,10 @@ namespace _Game.Towers
 
         private void Update()
         {
-            MoveToTarget();
+            if(target != null)
+                MoveToTarget();
+            else
+                MoveForward();
         }
 
         private void MoveToTarget()
@@ -43,6 +46,12 @@ namespace _Game.Towers
             currentTime += timeRatioToArrive * Time.deltaTime;
             transform.position = Vector3.Lerp(startPosition, target.transform.position, currentTime);
             CheckIfNearToDamage();
+        }
+
+        private void MoveForward()
+        {
+            //TODO:...
+            Dead();
         }
 
         private void CheckIfNearToDamage()

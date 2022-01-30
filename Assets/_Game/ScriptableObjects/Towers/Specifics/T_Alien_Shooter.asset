@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f8f105430b64a3283a3607f7b7aae23, type: 3}
-  m_Name: T_Base_0
+  m_Script: {fileID: 11500000, guid: a22f9199c7014acb9725e22526ce0256, type: 3}
+  m_Name: T_Alien_Shooter
   m_EditorClassIdentifier: 
   transaction:
     resourceCosts:
@@ -21,11 +21,8 @@ MonoBehaviour:
     - resource: {fileID: 11400000, guid: b83ddaf62256eea479574f2c83c80194, type: 2}
       amount: 0
   maxHealth: 100
-  newPrefab: {fileID: 0}
-  unlockedTowers:
-  - {fileID: 11400000, guid: 18c05b21420f14447b341a30ed7b51bf, type: 2}
-  - {fileID: 11400000, guid: 184c3adc89a4c52498c75e7febb3a586, type: 2}
-  specialTowers:
-  - {fileID: 11400000, guid: 6a5bf405caf4a4e45855aa3acb5153d1, type: 2}
-  - {fileID: 11400000, guid: 565ea7177796f324a93fe7599bed2858, type: 2}
-  buildRange: 10
+  newPrefab: {fileID: 956456093869454424, guid: 0ed9070b54ef32948949a3c7fb671907, type: 3}
+  range: 20
+  damage: 50
+  attackRate: 0.5
+  bulletPrefab: {fileID: 6628729620009440726, guid: 56160e93410dd264ca3ead4b80257d9a, type: 3}
