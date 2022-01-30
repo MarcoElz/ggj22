@@ -148,6 +148,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4343008854411327616, guid: dc0e3a0ce1612c045821a14a445d2cd2, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 95019f615e38644408c6728dc8fbfe37, type: 2}
     - target: {fileID: 7056731541532948544, guid: dc0e3a0ce1612c045821a14a445d2cd2, type: 3}
       propertyPath: m_Name
       value: Tocadiscos Variant
