@@ -8,7 +8,8 @@ namespace _Game.Towers
         [SerializeField] private AudioSource audioSource = default;
         
         private MusicData currentData;
-        private MusicData CurrentData => currentData != null ? currentData : currentData = (MusicData) CurrentAbstractData;
+        //private MusicData CurrentData => currentData != null ? currentData : currentData = (MusicData) CurrentAbstractData;
+        private MusicData CurrentData => (MusicData) CurrentAbstractData;
 
         public override void TurnOn()
         {

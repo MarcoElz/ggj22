@@ -6,7 +6,8 @@ namespace _Game.Towers
     {
         
         private TransmutatorData currentData;
-        private TransmutatorData CurrentData => currentData != null ? currentData : currentData = (TransmutatorData) CurrentAbstractData;
+        //private TransmutatorData CurrentData => currentData != null ? currentData : currentData = (TransmutatorData) CurrentAbstractData;
+        private TransmutatorData CurrentData => (TransmutatorData) CurrentAbstractData;
         protected override void Update()
         {
             if(!IsOn) return;

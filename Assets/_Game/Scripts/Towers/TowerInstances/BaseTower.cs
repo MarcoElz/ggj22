@@ -5,7 +5,8 @@ namespace _Game.Towers
     public class BaseTower : AbstractTower
     {
         private BaseTowerData currentData;
-        private BaseTowerData CurrentData => currentData != null ? currentData : currentData = (BaseTowerData) CurrentAbstractData;
+        //private BaseTowerData CurrentData => currentData != null ? currentData : currentData = (BaseTowerData) CurrentAbstractData;
+        private BaseTowerData CurrentData => (BaseTowerData) CurrentAbstractData;
 
         public List<TowerGeneralData> GetAlUnlockedTowers()
         {

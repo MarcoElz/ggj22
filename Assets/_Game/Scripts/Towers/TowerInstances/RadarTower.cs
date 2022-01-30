@@ -9,7 +9,8 @@ namespace _Game.Towers
         [SerializeField] private float timeBetweenChecks = 0.5f;
         
         private RadarData currentData;
-        private RadarData CurrentData => currentData != null ? currentData : currentData = (RadarData) CurrentAbstractData;
+        //private RadarData CurrentData => currentData != null ? currentData : currentData = (RadarData) CurrentAbstractData;
+        private RadarData CurrentData => (RadarData) CurrentAbstractData;
 
         private float timeOfLastCheck;
 

@@ -9,7 +9,8 @@ namespace _Game.Towers
     public class ShooterTower : AbstractTower
     {
         private ShooterData currentData;
-        private ShooterData CurrentData => currentData != null ? currentData : currentData = (ShooterData) CurrentAbstractData;
+        //private ShooterData CurrentData => currentData != null ? currentData : currentData = (ShooterData) CurrentAbstractData;
+        private ShooterData CurrentData => (ShooterData) CurrentAbstractData;
 
         private float timeBetweenAttacks;
         private float timeOfLastAttack;
