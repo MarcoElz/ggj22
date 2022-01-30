@@ -14,9 +14,9 @@ namespace _Game.UI.Towers
 
         protected Button button;
         
-        public Action<AbstractAction> onEntered;
-        public Action onExited;
-        public Action<AbstractAction> onPressed;
+        public event Action<AbstractAction> onEntered;
+        public event Action onExited;
+        public event Action<AbstractAction> onPressed;
 
         private void Awake()
         {
@@ -27,12 +27,12 @@ namespace _Game.UI.Towers
         public virtual void OnShow(AbstractTower tower)
         { }
 
-        public void OnPointerEnter(PointerEventData eventData)
+        public virtual void OnPointerEnter(PointerEventData eventData)
         {
             onEntered?.Invoke(action);
         }
 
-        public void OnPointerExit(PointerEventData eventData)
+        public virtual void OnPointerExit(PointerEventData eventData)
         {
             onExited?.Invoke();
         }
