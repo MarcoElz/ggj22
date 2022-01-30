@@ -52,12 +52,16 @@ namespace _Game.Towers
             if (!IsAlive) return;
             
             IsOn = true;
+            var animator = GetComponentInChildren<Animator>();
+            if(animator != null) animator.enabled = true;
             onTurnedOn?.Invoke();
         }
 
         public virtual void TurnOff()
         {
             IsOn = false;
+            var animator = GetComponentInChildren<Animator>();
+            if(animator != null) animator.enabled = false;
             onTurnedOff?.Invoke();
         }
 

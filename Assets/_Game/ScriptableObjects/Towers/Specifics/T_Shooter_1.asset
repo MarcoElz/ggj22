@@ -22,7 +22,7 @@ MonoBehaviour:
       amount: -2
   maxHealth: 100
   newPrefab: {fileID: 1200744058893529484, guid: e329d97bfbd6a0947913ef2c67964fcf, type: 3}
-  range: 7
-  damage: 20
+  range: 10
+  damage: 30
   attackRate: 1
   bulletPrefab: {fileID: 6628729620009440726, guid: 56160e93410dd264ca3ead4b80257d9a, type: 3}

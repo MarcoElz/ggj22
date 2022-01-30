@@ -5275,6 +5275,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1389604636}
+  - component: {fileID: 1389604637}
   m_Layer: 0
   m_Name: CameraPivot
   m_TagString: Untagged
@@ -5297,6 +5298,19 @@ Transform:
   m_Father: {fileID: 856691920}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 30, y: 45, z: 0}
+--- !u!114 &1389604637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389604635}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10da8e2769fd9be41971ccc2c0b753ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragSpeed: 1
 --- !u!1 &1466123082
 GameObject:
   m_ObjectHideFlags: 0
@@ -6644,6 +6658,7 @@ GameObject:
   - component: {fileID: 1984199308}
   - component: {fileID: 1984199312}
   - component: {fileID: 1984199311}
+  - component: {fileID: 1984199313}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6767,6 +6782,19 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &1984199313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984199307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 379fd5a1690bd524eb7a514bcab2020f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomSpeed: 10
 --- !u!1 &1990948690
 GameObject:
   m_ObjectHideFlags: 0

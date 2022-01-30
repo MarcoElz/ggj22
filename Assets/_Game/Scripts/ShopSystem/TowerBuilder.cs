@@ -22,6 +22,8 @@ namespace _Game.ShopSystem
         [SerializeField] private DistanceCircleUI rangeUI = default;
 
         private List<AntennaTower> antennas;
+
+        private bool firstAntenna;
         
         public event Action<AbstractTower> onTowerCreated;
         public event Action<AbstractTower> onTowerDestroyed;
@@ -184,13 +186,21 @@ namespace _Game.ShopSystem
             tower.TurnOn();
             
             onTowerCreated?.Invoke(tower);
-            
-            
-            //Radar stuff
-            if(tower is AntennaTower antenna)
-                antennas.Add(antenna);
-            
+
+            if (tower is AntennaTower antenna) 
+                OnAntennaBuild(antenna);
+
             StopBuilding();
+        }
+
+        private void OnAntennaBuild(AntennaTower antenna)
+        {
+            antennas.Add(antenna);
+            if (!firstAntenna)
+            {
+                firstAntenna = true;
+                FindObjectOfType<DragCamera>().enabled = true;
+            }
         }
     }
 }
