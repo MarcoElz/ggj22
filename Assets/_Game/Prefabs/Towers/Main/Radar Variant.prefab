@@ -21,6 +21,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4364115755586256072, guid: 1a148eebd134f414b8c8b65fd5108e30, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 923dbba54eb73c147990947ed2298642, type: 2}
     - target: {fileID: 7006343523652533256, guid: 1a148eebd134f414b8c8b65fd5108e30, type: 3}
       propertyPath: m_Name
       value: Radar Variant

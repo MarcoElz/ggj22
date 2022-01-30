@@ -181,6 +181,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret_HighTech (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4662816880471530692, guid: 05650541611682d42b05ee386436690f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 8a6120dc7e7d8f44cb00cebecbc8d4d4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05650541611682d42b05ee386436690f, type: 3}
 --- !u!4 &74836620197315126 stripped

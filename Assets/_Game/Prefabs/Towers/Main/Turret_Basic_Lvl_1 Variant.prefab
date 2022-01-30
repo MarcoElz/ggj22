@@ -43,8 +43,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   generalData: {fileID: 11400000, guid: 184c3adc89a4c52498c75e7febb3a586, type: 2}
-  head: {fileID: 8609144923569418888}
-  bulletOrigin: {fileID: 5140133957816164753}
 --- !u!1001 &4943568983507762560
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -100,6 +98,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret_Basic_Lvl_1 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5831598326597104792, guid: 0ed9070b54ef32948949a3c7fb671907, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: be051da2a918b3845b59e5d5e6a9cb53, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ed9070b54ef32948949a3c7fb671907, type: 3}
 --- !u!1 &5322435020328454616 stripped
@@ -110,10 +112,5 @@ GameObject:
 --- !u!4 &4798241114298946402 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 436236819309850338, guid: 0ed9070b54ef32948949a3c7fb671907, type: 3}
-  m_PrefabInstance: {fileID: 4943568983507762560}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &8609144923569418888 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3738768884026052360, guid: 0ed9070b54ef32948949a3c7fb671907, type: 3}
   m_PrefabInstance: {fileID: 4943568983507762560}
   m_PrefabAsset: {fileID: 0}
