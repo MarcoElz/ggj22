@@ -497,7 +497,7 @@ RectTransform:
   m_GameObject: {fileID: 39908652}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 89977474}
   m_RootOrder: 0
@@ -752,8 +752,8 @@ MonoBehaviour:
   hideDuration: 0.25
   hideOnAwake: 1
   image: {fileID: 39908654}
-  small: {fileID: 21300000, guid: d4e758009e1c97b40b0b895419b41365, type: 3}
-  medium: {fileID: 21300000, guid: 9a36c6743a0bec443b8ef88d34d14f23, type: 3}
+  small: {fileID: 21300000, guid: 14cd99c99d7525743a94aa2b626d9783, type: 3}
+  medium: {fileID: 21300000, guid: 14cd99c99d7525743a94aa2b626d9783, type: 3}
   large: {fileID: 21300000, guid: 14cd99c99d7525743a94aa2b626d9783, type: 3}
 --- !u!225 &89977476
 CanvasGroup:
@@ -2433,7 +2433,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 46.8}
+  m_AnchoredPosition: {x: 0, y: 46.80005}
   m_SizeDelta: {x: 1047, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &810271488
