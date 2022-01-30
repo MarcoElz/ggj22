@@ -10,17 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 812aee2d54b6480e91bcd7c526751ce3, type: 3}
-  m_Name: T_Energy
+  m_Name: T_Music
   m_EditorClassIdentifier: 
-  displayName: Driller
+  displayName: Music
   sprite: {fileID: 0}
-  towerPrefab: {fileID: 5674800839844773599, guid: 22ead86e7d1eef54daada2582f7084ce, type: 3}
-  labels:
-  - {fileID: 11400000, guid: 7ec749aa5afd0fa40aec98ba22dbcf9e, type: 2}
+  towerPrefab: {fileID: 1953861222837024547, guid: 395698f76de19094e845311d34f840ed, type: 3}
+  labels: []
   energyCostPerSecond: 0
-  contaminationPerSecond: 1
+  contaminationPerSecond: 0
   upgradesData:
-  - {fileID: 11400000, guid: 72f4d8b9ae49f4b4da8a31cefd3624bf, type: 2}
+  - {fileID: 11400000, guid: c1d7ddddbbe71ce4cac85eb5d69ebada, type: 2}
   uiData:
     canBeDeleted: 1
     canBeTurnOnOff: 1

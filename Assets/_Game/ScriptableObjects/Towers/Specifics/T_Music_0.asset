@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e372cbba3f4e47aa93510c0e41ab0792, type: 3}
-  m_Name: T_Radar_0
+  m_Script: {fileID: 11500000, guid: 6a0fa36280f244a39a5e03c81052dac7, type: 3}
+  m_Name: T_Music_0
   m_EditorClassIdentifier: 
   transaction:
     resourceCosts: []
   maxHealth: 100
-  newPrefab: {fileID: 7006343523652533256, guid: 1a148eebd134f414b8c8b65fd5108e30, type: 3}
-  checkRange: 1
+  newPrefab: {fileID: 7056731541532948544, guid: dc0e3a0ce1612c045821a14a445d2cd2, type: 3}
+  musicClips: []

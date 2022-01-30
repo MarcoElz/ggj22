@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 812aee2d54b6480e91bcd7c526751ce3, type: 3}
   m_Name: T_Radar
   m_EditorClassIdentifier: 
-  displayName: 
+  displayName: Radar
   sprite: {fileID: 0}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 8592690369501052488, guid: 917509b71b69d574aad008d25105b847, type: 3}
   labels: []
   energyCostPerSecond: 1
   contaminationPerSecond: 0
   upgradesData:
   - {fileID: 11400000, guid: 0312403cc4afc7648ba94551130eac67, type: 2}
   uiData:
-    canBeDeleted: 0
-    canBeTurnOnOff: 0
+    canBeDeleted: 1
+    canBeTurnOnOff: 1
     hasSpecialAction: 0
     specialActionSprite: {fileID: 0}

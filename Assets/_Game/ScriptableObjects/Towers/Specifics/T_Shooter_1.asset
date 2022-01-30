@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a22f9199c7014acb9725e22526ce0256, type: 3}
-  m_Name: T_Shooter_0
+  m_Name: T_Shooter_1
   m_EditorClassIdentifier: 
   transaction:
     resourceCosts:
     - resource: {fileID: 11400000, guid: 6d81930df5960574c990aeac40ff2c15, type: 2}
-      amount: -20
+      amount: -25
     - resource: {fileID: 11400000, guid: f92857b913dcd0d4390cb5eb035e6432, type: 2}
-      amount: -5
+      amount: -7
     - resource: {fileID: 11400000, guid: b83ddaf62256eea479574f2c83c80194, type: 2}
-      amount: 0
+      amount: -2
   maxHealth: 100
-  newPrefab: {fileID: 956456093869454424, guid: 0ed9070b54ef32948949a3c7fb671907, type: 3}
+  newPrefab: {fileID: 1200744058893529484, guid: e329d97bfbd6a0947913ef2c67964fcf, type: 3}
   range: 7
   damage: 20
   attackRate: 1
