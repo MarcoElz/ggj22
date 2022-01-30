@@ -31,3 +31,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: aef5dac01c3ba7e49a61b68fadd64097, type: 2}
   - {fileID: 11400000, guid: 59053e43ab665094aa9728d16a777c75, type: 2}
   buildRange: 10
+  upgradedCapacity:
+  - resource: {fileID: 11400000, guid: 6d81930df5960574c990aeac40ff2c15, type: 2}
+    amount: 50
+  - resource: {fileID: 11400000, guid: f92857b913dcd0d4390cb5eb035e6432, type: 2}
+    amount: 20
+  - resource: {fileID: 11400000, guid: b83ddaf62256eea479574f2c83c80194, type: 2}
+    amount: 1
+  - resource: {fileID: 11400000, guid: 6eaea064ad3537a47a28836683b67596, type: 2}
+    amount: 100

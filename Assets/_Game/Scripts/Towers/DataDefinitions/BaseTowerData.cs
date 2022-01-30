@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using _Game.GameResources;
+using UnityEngine;
 
 namespace _Game.Towers
 {
@@ -9,8 +10,12 @@ namespace _Game.Towers
         [SerializeField] private TowerGeneralData[] specialTowers = default;
         [SerializeField] private float buildRange = 10f;
 
+        [SerializeField] private ResourceAmount[] upgradedCapacity = default;
+        
         public TowerGeneralData[] UnlockedTowers => unlockedTowers;
         public TowerGeneralData[] SpecialTowers => specialTowers;
         public override float Range => buildRange;
+
+        public ResourceAmount[] UpgradedCapacity => upgradedCapacity;
     }
 }

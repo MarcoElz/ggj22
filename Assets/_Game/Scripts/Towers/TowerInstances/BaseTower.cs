@@ -26,5 +26,14 @@ namespace _Game.Towers
             return towers;
         }
 
+        protected override void OnUpgraded()
+        {
+            base.OnUpgraded();
+
+            var upgrades = CurrentData.UpgradedCapacity;
+            foreach (var upgrade in upgrades) 
+                Global.Inventory.UpgradeCapacity(upgrade.resource, upgrade.amount);
+
+        }
     }
 }

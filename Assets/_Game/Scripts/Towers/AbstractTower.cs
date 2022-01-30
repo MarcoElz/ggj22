@@ -99,7 +99,7 @@ namespace _Game.Towers
 
             if (CurrentAbstractData.NewPrefab != null)
             {
-                Destroy(transform.GetChild(0));
+                Destroy(transform.GetChild(0).gameObject);
                 Instantiate(CurrentAbstractData.NewPrefab, transform);
             }
         }
