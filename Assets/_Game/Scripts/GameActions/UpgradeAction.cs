@@ -11,7 +11,8 @@ namespace _Game.GameActions
         [SerializeField] private TimeParticles upgradeParticles = default;
         public override Transaction GetTransaction(AbstractTower tower)
         {
-            return tower.Data.UpgradesData[tower.UpgradeLevel].Transaction;
+            if (!tower.HasNextUpgrade) return default;
+            return tower.Data.UpgradesData[tower.UpgradeLevel+1].Transaction;
         }
 
         public override bool CanDoAction(AbstractTower tower)

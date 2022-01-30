@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Main Base
   sprite: {fileID: 0}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 1670249559694382961, guid: d3e7a0fa3e30143428216ad0842e2a7a, type: 3}
   labels: []
   energyCostPerSecond: 0
   contaminationPerSecond: 0

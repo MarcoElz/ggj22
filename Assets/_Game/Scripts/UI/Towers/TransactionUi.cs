@@ -60,6 +60,12 @@ namespace _Game.UI.Towers
 
         private void RefreshTransactionUi(Transaction transaction)
         {
+            if (transaction.resourceCosts == null)
+            {
+                Hide();
+                return;
+            }
+            
             foreach (var resourceCost in transaction.resourceCosts)
                 currentResources[resourceCost.resource].Init(resourceCost.amount);
         }

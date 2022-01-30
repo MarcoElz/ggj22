@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 812aee2d54b6480e91bcd7c526751ce3, type: 3}
   m_Name: T_Turbina
   m_EditorClassIdentifier: 
-  displayName: Driller
+  displayName: Wind Turbine
   sprite: {fileID: 0}
   towerPrefab: {fileID: 4030588373114381710, guid: 1ee854f38da6e714982318e009d37306, type: 3}
   labels:
