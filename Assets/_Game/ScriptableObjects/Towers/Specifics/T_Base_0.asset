@@ -28,4 +28,6 @@ MonoBehaviour:
   specialTowers:
   - {fileID: 11400000, guid: 6a5bf405caf4a4e45855aa3acb5153d1, type: 2}
   - {fileID: 11400000, guid: 565ea7177796f324a93fe7599bed2858, type: 2}
+  - {fileID: 11400000, guid: aef5dac01c3ba7e49a61b68fadd64097, type: 2}
+  - {fileID: 11400000, guid: 59053e43ab665094aa9728d16a777c75, type: 2}
   buildRange: 10

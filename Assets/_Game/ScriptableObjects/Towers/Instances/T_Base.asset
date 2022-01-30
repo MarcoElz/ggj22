@@ -20,6 +20,9 @@ MonoBehaviour:
   contaminationPerSecond: 0
   upgradesData:
   - {fileID: 11400000, guid: 74af7de8fdcc04b49b9ecf592903fc51, type: 2}
+  - {fileID: 11400000, guid: b42e03e2c01da7f409b35b9de3d18015, type: 2}
+  - {fileID: 11400000, guid: 8d68f228d74e6cd4a9c44d0b8ecee0da, type: 2}
+  - {fileID: 11400000, guid: 490ea8e02e7bd44458ed6c74719331aa, type: 2}
   uiData:
     canBeDeleted: 0
     canBeTurnOnOff: 0

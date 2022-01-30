@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: High Energy
   sprite: {fileID: 0}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 4301405749701122930, guid: b78a0e36536b37341a7ee7822199560d, type: 3}
   labels: []
-  energyCostPerSecond: 1
+  energyCostPerSecond: 0
   contaminationPerSecond: 0
   upgradesData:
   - {fileID: 11400000, guid: 6347fbf30f87ede40b96a7f6378f22bc, type: 2}

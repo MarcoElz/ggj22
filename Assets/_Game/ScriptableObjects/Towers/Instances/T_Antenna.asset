@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Antenna
   sprite: {fileID: 0}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 4413066738937860617, guid: d265481d7f2020647ad7a22ea9d71888, type: 3}
   labels: []
   energyCostPerSecond: 1
   contaminationPerSecond: 0
