@@ -11,7 +11,8 @@ namespace _Game.EnergySystem
     {
         [SerializeField] private TowerBuilder builder = default;
         [SerializeField] private Inventory inventory = default;
-        [SerializeField] private Resource resource = default;
+        [SerializeField] private Resource energy = default;
+        [SerializeField] private Resource contamination = default;
 
         private List<IEnergyGenerator> generatorsList;
         private IEnergyGenerator[] generators;
@@ -36,19 +37,35 @@ namespace _Game.EnergySystem
 
         private void Update()
         {
+            EnergyGeneration();
+            ContaminationGeneration();
+        }
+
+        private void EnergyGeneration()
+        {
             var energyGenerated = CalculateTotalGeneratedEnergyRate();
             var energyConsumed = CalculateTotalUsedEnergyRate();
             var totalEnergy = energyGenerated - energyConsumed;
             var totalEnergyThisFrame = totalEnergy * Time.deltaTime;
             
             if (totalEnergyThisFrame > 0f)
-                inventory.Add(resource, totalEnergyThisFrame);
+                inventory.Add(energy, totalEnergyThisFrame);
             else 
-                inventory.Consume(resource, totalEnergyThisFrame);
+                inventory.Consume(energy, totalEnergyThisFrame);
 
-            var currentEnergy = inventory.GetCurrentAmount(resource);
+            var currentEnergy = inventory.GetCurrentAmount(energy);
             if (currentEnergy <= Mathf.Epsilon)
                 OnOutOfEnergy();
+        }
+
+        private void ContaminationGeneration()
+        {
+            var totalContamination = CalculateGeneratedContamination();
+            var totalContaminationThisFrame = totalContamination * Time.deltaTime;
+            
+            if (totalContaminationThisFrame > 0f)
+                inventory.Add(contamination, totalContaminationThisFrame);
+            
         }
 
         private float CalculateTotalGeneratedEnergyRate()
@@ -92,6 +109,22 @@ namespace _Game.EnergySystem
                 if (tower.Data.EnergyCostPerSecond > 0f)
                     tower.TurnOff();
             }
+        }
+
+        private float CalculateGeneratedContamination()
+        {
+            var total = 0f;
+            var towers = TowersManager.Instance.Elements;
+            for (int i = 0; i < towers.Length; i++)
+            {
+                var tower = towers[i];
+                if (!tower.IsOn) continue;
+
+                if (tower.Data.ContaminationPerSecond > 0f)
+                    total += tower.Data.ContaminationPerSecond;
+            }
+
+            return total;
         }
 
         private void OnNewTowerCreated(AbstractTower tower)
