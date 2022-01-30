@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 812aee2d54b6480e91bcd7c526751ce3, type: 3}
   m_Name: T_Alien_Knowledge
   m_EditorClassIdentifier: 
-  displayName: Alien Create <K>
+  displayName: Alien <K>
   sprite: {fileID: 0}
   towerPrefab: {fileID: 7711292770483023638, guid: 0b11e6802f3b26e4d93e2273018053ee, type: 3}
   labels: []
