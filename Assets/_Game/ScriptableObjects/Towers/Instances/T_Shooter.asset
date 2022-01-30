@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Shooter
   sprite: {fileID: 21300000, guid: c47ea92620e4d7040845997ff24d37cc, type: 3}
-  towerPrefab: {fileID: 6759767654203264422, guid: babb8d634c65bc34c8f22e8753f60dce, type: 3}
+  towerPrefab: {fileID: 7748052736141519106, guid: 4a9223a4c6ed1bf4a8797049ca8ee237, type: 3}
   labels:
   - {fileID: 11400000, guid: 9e1759bdda27ab6469ba5f53aaf16cad, type: 2}
   energyCostPerSecond: 1
