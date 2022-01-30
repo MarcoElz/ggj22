@@ -5762,6 +5762,10 @@ MonoBehaviour:
   enemyCreatures:
   - prefab: {fileID: 1949130357769676637, guid: 1b9dd7c8360c859419c477e15a6ccd36, type: 3}
     cost: 20
+  - prefab: {fileID: 3378832933900789906, guid: 69cc22edf9b3ba94bb0d6e6887883c73, type: 3}
+    cost: 20
+  - prefab: {fileID: 7624221332081395294, guid: 74d033c0930492447a0346169c60a70f, type: 3}
+    cost: 20
   timeToCheck: 10
 --- !u!1 &1623555196
 GameObject:

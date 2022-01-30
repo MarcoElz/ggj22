@@ -17,7 +17,7 @@ namespace _Game.UI.Builder
         private void OnDisable() => mainBase.onUpgraded -= ForceRefresh;
 
         protected override void OnShow()
-        {
+        {//
             base.OnShow();
             ForceRefresh();
         }

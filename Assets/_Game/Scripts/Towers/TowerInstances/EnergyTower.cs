@@ -1,5 +1,4 @@
 ﻿using _Game.GameResources;
-using UnityEngine;
 
 namespace _Game.Towers
 {
