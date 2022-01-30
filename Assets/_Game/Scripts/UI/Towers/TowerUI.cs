@@ -62,7 +62,7 @@ namespace _Game.UI.Towers
         private void Update()
         {
             var position = MouseHelper.Instance.WorldPoint;
-            position += (Vector3.forward + Vector3.right) * 1.0f;
+            //position += (Vector3.forward + Vector3.right) * 1.0f;
             var tower = TowersManager.Instance.Elements.GetClosestElementInRange(position, range);
 
             var validTower = tower != null && tower.TimeSinceSpawn > 1.0f;
