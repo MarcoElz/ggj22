@@ -71,6 +71,9 @@ namespace _Game.InventorySystem
         
         public bool CanProcessTransaction(Transaction transaction)
         {
+            if (transaction.resourceCosts == null)
+                return true;
+            
             for (int i = 0; i < transaction.resourceCosts.Length; i++)
             {
                 var resourceAmount = transaction.resourceCosts[i];
