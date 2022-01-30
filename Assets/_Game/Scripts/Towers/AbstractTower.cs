@@ -13,8 +13,8 @@ namespace _Game.Towers
         public bool HasNextUpgrade => UpgradeLevel < generalData.UpgradesData.Length -1;
         public bool IsOn { get; private set; }
 
-        public int Health { get; private set; }
-        public int MaxHealth => currentAbstractData.MaxHealth;
+        public float Health { get; private set; }
+        public float MaxHealth => currentAbstractData.MaxHealth;
         public float HealthPercentage => Health / currentAbstractData.MaxHealth;
 
         public float TimeSinceSpawn => Time.time - timeOfSpawn;
@@ -22,7 +22,7 @@ namespace _Game.Towers
         public event Action onTurnedOn;
         public event Action onTurnedOff;
         public event Action onUpgraded;
-        public event Action<int, int> onHealthChanged;
+        public event Action<float, float> onHealthChanged;
 
         protected AbstractSpecificTowerData currentAbstractData => generalData.UpgradesData[UpgradeLevel];
 
@@ -65,7 +65,7 @@ namespace _Game.Towers
             onUpgraded?.Invoke();
         }
         
-        public void Hurt(int amount)
+        public void Hurt(float amount)
         {
             Health -= amount;
 

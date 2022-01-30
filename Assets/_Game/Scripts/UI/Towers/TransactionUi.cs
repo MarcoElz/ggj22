@@ -50,7 +50,7 @@ namespace _Game.UI.Towers
             Show();
         }
 
-        private void OnHealthChanged(int current, int max)
+        private void OnHealthChanged(float current, float max)
         {
             var transaction = currentAction.GetTransaction(currentTower);
             RefreshTransactionUi(transaction);

@@ -7,40 +7,40 @@ namespace _Game.Creatures
 {
     public class AbstractCreature : MonoBehaviour, IDamageable, IPoolObject
     {
-        [SerializeField] private int startHealth = 100;
+        [SerializeField] protected float startHealth = 100;
         
-        private int health;
+        public float Health { get; protected set; }
 
-        private void Awake()
+        protected virtual void Awake()
         {
             Initialize();
         }
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             CreaturesManager.Instance.Add(this);
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
             CreaturesManager.Instance.Remove(this);
         }
 
-        public void Hurt(int amount)
+        public void Hurt(float amount)
         {
-            health -= amount;
-            if (health <= 0) 
+            Health -= amount;
+            if (Health <= 0) 
                 Dead();
         }
 
-        private void Dead()
+        protected virtual void Dead()
         {
             Destroy(gameObject);
         }
 
-        private void Initialize()
+        protected virtual void Initialize()
         {
-            health = startHealth;
+            Health = startHealth;
         }
 
         public string PoolId { get; set; }
