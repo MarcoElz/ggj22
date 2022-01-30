@@ -1,6 +1,7 @@
 ﻿using System;
 using _Game.GameResources;
 using _Game.ShopSystem;
+using _Game.Towers;
 using UnityEngine;
 
 namespace _Game
@@ -25,9 +26,26 @@ namespace _Game
         public static Resource Knowledge => Instance.knowledgeResource;
         public static Resource Contamination => Instance.contaminationResource;
         
+        public static bool IsSpecialTowersUnlocked { get; private set; }
+
+        private BaseTower mainTower;
+
+        public static BaseTower MainTower
+        {
+            get
+            {
+                if (Instance.mainTower == null)
+                    Instance.mainTower = FindObjectOfType<BaseTower>();
+
+                return Instance.mainTower;
+            }
+        }
+        
         private void Awake()
         {
             Instance = this;
         }
+
+        public void UnlockSpecialTowers() => IsSpecialTowersUnlocked = true;
     }
 }

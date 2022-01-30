@@ -14,6 +14,7 @@ namespace _Game.UI.Utils
         [SerializeField] private bool hideOnAwake = true;
         
         protected CanvasGroup canvasGroup;
+        protected bool isActive;
         
         protected virtual void Awake()
         {
@@ -37,6 +38,14 @@ namespace _Game.UI.Utils
             OnHide();
             canvasGroup.alpha = 0f;
         }
+
+        public void Toggle()
+        {
+            if(isActive)
+                Hide();
+            else
+                Show();
+        }
         
         public void Show()
         {
@@ -54,6 +63,7 @@ namespace _Game.UI.Utils
         {
             canvasGroup.interactable = true;
             canvasGroup.blocksRaycasts = true;
+            isActive = true;
         }
 
         protected virtual void OnHide()
@@ -61,6 +71,7 @@ namespace _Game.UI.Utils
             canvasGroup.DOKill();
             canvasGroup.interactable = false;
             canvasGroup.blocksRaycasts = false;
+            isActive = false;
         }
     }
 }

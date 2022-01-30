@@ -20,3 +20,8 @@ MonoBehaviour:
       amount: 0
     - resource: {fileID: 11400000, guid: b83ddaf62256eea479574f2c83c80194, type: 2}
       amount: 0
+  maxHealth: 100
+  unlockedTowers:
+  - {fileID: 11400000, guid: 18c05b21420f14447b341a30ed7b51bf, type: 2}
+  - {fileID: 11400000, guid: 184c3adc89a4c52498c75e7febb3a586, type: 2}
+  specialTowers: []

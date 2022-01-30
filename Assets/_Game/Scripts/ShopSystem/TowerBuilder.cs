@@ -2,8 +2,10 @@
 using _Game.GameActions;
 using _Game.InputHelper;
 using _Game.Towers;
+using Ignita.Utils.Extensions;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace _Game.ShopSystem
 {
@@ -19,6 +21,7 @@ namespace _Game.ShopSystem
         public bool IsBuilding { get; private set; }
 
         private TowerGeneralData currentBuildingData;
+        
 
         private void Awake()
         {
@@ -32,10 +35,29 @@ namespace _Game.ShopSystem
 
             var position = MouseHelper.Instance.WorldPoint;
             placeholder.position = position;
+
+            var canBuildInPosition = CanBuildInPosition(position);
             
-            if(Input.GetMouseButtonDown(0))
+            //TODO: Cange color placeholder
+            
+            if(canBuildInPosition && Input.GetMouseButtonDown(0))
                 Build(currentBuildingData);
                 
+        }
+
+        private bool CanBuildInPosition(Vector3 position)
+        {
+            var isOverUI = EventSystem.current.IsPointerOverGameObject();
+            if (isOverUI)
+                return false;
+
+            var closestTower = TowersManager.Instance.Elements.GetClosestElementInRange(position, 2f);
+            var isOtherTowerTooNear = closestTower != null;
+
+            if (isOtherTowerTooNear)
+                return false;
+
+            return true;
         }
 
         public void TryBuildMode(TowerGeneralData towerData)

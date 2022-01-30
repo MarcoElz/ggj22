@@ -10,6 +10,11 @@ namespace _Game.Towers
     [CreateAssetMenu(fileName = "T_", menuName = "_Game/Towers/Data", order = 1)]
     public class TowerGeneralData : ScriptableObject
     {
+        [Header("Builder UI")]
+        [SerializeField] private string displayName = "";
+        [SerializeField] private Sprite sprite = default;
+        
+        [Header("General")]
         [SerializeField] private AbstractTower towerPrefab = default;
         [SerializeField] private TowerLabel[] labels = default;
         [SerializeField] private float energyCostPerSecond = 1f;
@@ -19,6 +24,8 @@ namespace _Game.Towers
 
         [SerializeField] private TowerUIData uiData;
 
+        public string DisplayName => displayName;
+        public Sprite Sprite => sprite;
         public AbstractTower TowerPrefab => towerPrefab;
         public TowerLabel[] Labels => labels;
         public float EnergyCostPerSecond => energyCostPerSecond;
