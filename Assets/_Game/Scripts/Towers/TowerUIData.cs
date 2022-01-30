@@ -8,6 +8,8 @@ namespace _Game.Towers
     {
         [Header("General")] 
         public bool canBeDeleted;
+
+        public bool canBeTurnOnOff;
         
         [Header("Special Action")] 
         public bool hasSpecialAction;

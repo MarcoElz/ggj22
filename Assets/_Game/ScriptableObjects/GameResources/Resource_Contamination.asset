@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d66581fce11f48c688cc4992616970b2, type: 3}
   m_Name: Resource_Contamination
   m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 90ea9010d6ff4944793e6aaf15ddb73e, type: 3}

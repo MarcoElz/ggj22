@@ -35,6 +35,8 @@ namespace _Game.UI.Towers
 
         public void Init(AbstractTower tower, AbstractAction action)
         {
+            //if(!action.CanDoAction(tower)) return;
+            
             if (currentTower != null)
                 currentTower.onHealthChanged -= OnHealthChanged;
             

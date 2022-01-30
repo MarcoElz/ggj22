@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 812aee2d54b6480e91bcd7c526751ce3, type: 3}
   m_Name: T_Energy
   m_EditorClassIdentifier: 
+  displayName: Driller
+  sprite: {fileID: 0}
   towerPrefab: {fileID: 4910381807974327920, guid: 40b83f6557efc4c4ba5feb81b279ecff, type: 3}
   labels:
   - {fileID: 11400000, guid: 7ec749aa5afd0fa40aec98ba22dbcf9e, type: 2}
@@ -21,5 +23,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 72f4d8b9ae49f4b4da8a31cefd3624bf, type: 2}
   uiData:
     canBeDeleted: 1
+    canBeTurnOnOff: 1
     hasSpecialAction: 0
     specialActionSprite: {fileID: 0}

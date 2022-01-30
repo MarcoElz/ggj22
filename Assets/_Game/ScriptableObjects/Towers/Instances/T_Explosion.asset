@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 812aee2d54b6480e91bcd7c526751ce3, type: 3}
   m_Name: T_Explosion
   m_EditorClassIdentifier: 
+  displayName: Explosion
+  sprite: {fileID: 0}
   towerPrefab: {fileID: 326338752448640357, guid: 3ae45a8b21fe7ef49b445ae98ff4720b, type: 3}
   labels:
   - {fileID: 11400000, guid: 9e1759bdda27ab6469ba5f53aaf16cad, type: 2}
@@ -21,5 +23,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1f90148f0fd4d4842aa33c7c4def1cdd, type: 2}
   uiData:
     canBeDeleted: 1
+    canBeTurnOnOff: 1
     hasSpecialAction: 0
     specialActionSprite: {fileID: 0}

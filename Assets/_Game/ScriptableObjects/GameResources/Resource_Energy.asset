@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d66581fce11f48c688cc4992616970b2, type: 3}
   m_Name: Resource_Energy
   m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: f5262a9266d38544e933db9e0c4cd0ad, type: 3}

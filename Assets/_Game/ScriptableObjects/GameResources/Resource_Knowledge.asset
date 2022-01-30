@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d66581fce11f48c688cc4992616970b2, type: 3}
   m_Name: Resource_Knowledge
   m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: c5c56999d9ea5a24cb9b8fc0b21ca6a9, type: 3}

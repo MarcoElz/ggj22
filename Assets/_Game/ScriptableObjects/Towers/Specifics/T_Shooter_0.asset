@@ -21,7 +21,7 @@ MonoBehaviour:
     - resource: {fileID: 11400000, guid: b83ddaf62256eea479574f2c83c80194, type: 2}
       amount: 0
   maxHealth: 100
-  newPrefab: {fileID: 0}
+  newPrefab: {fileID: 6200829266554224067, guid: 52ab8065adcbced41a1fd75cd09b740e, type: 3}
   range: 7
   damage: 20
   attackRate: 1

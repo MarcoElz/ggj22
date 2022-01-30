@@ -37,7 +37,7 @@ namespace _Game.UI.Towers
             onExited?.Invoke();
         }
 
-        private void PressAction()
+        protected virtual void PressAction()
         {
             onPressed?.Invoke(action);
         }

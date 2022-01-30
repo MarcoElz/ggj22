@@ -13,7 +13,9 @@ namespace _Game.ShopSystem
 {
     public class TowerBuilder : MonoBehaviour
     {
-        [SerializeField] private Transform placeholder = default;
+        //[SerializeField] private Transform placeholder = default;
+        [SerializeField] private Material placeholderMaterialPositive = default;
+        [SerializeField] private Material placeholderMaterialNegative = default;
         [SerializeField] private BuyAction buyAction = default;
         [SerializeField] private DeleteAction deleteAction = default;
         [SerializeField] private DistanceCircleUI rangeUI = default;
@@ -24,7 +26,9 @@ namespace _Game.ShopSystem
         public bool IsBuilding { get; private set; }
 
         private TowerGeneralData currentBuildingData;
-        
+        private Transform placeholder;
+
+        private bool canBuildInPositionLastFrame;
 
         private void Awake()
         {
@@ -42,10 +46,13 @@ namespace _Game.ShopSystem
             var canBuildInPosition = CanBuildInPosition(position);
             
             //TODO: Change color placeholder
+            if(canBuildInPositionLastFrame != canBuildInPosition)
+                SetMaterialToPlaceholder(canBuildInPosition);
             
             if(canBuildInPosition && Input.GetMouseButtonDown(0))
                 Build(currentBuildingData);
-                
+
+            canBuildInPositionLastFrame = canBuildInPosition;
         }
 
         private bool CanBuildInPosition(Vector3 position)
@@ -93,15 +100,35 @@ namespace _Game.ShopSystem
         private void StartBuilding()
         {
             IsBuilding = true;
-            placeholder.gameObject.SetActive(true);
+            //placeholder.gameObject.SetActive(true);
             rangeUI.Init(Global.MainTower.transform.position, Global.MainTower.CurrentAbstractData.Range);
+
+            //TODO: Improve this...
+            var newPlaceholder = Instantiate(currentBuildingData.TowerPrefab.CurrentAbstractData.NewPrefab);
+            placeholder = newPlaceholder.transform;
+            SetMaterialToPlaceholder(true);
+        }
+
+        private void SetMaterialToPlaceholder(bool canBuild)
+        {
+            var material = canBuild ? placeholderMaterialPositive : placeholderMaterialNegative;
+            
+            var renderers = placeholder.GetComponentsInChildren<Renderer>(true);
+            foreach (var render in renderers)
+            {
+                render.sharedMaterial = material;
+                for (int i = 0; i < render.sharedMaterials.Length; i++) 
+                    render.sharedMaterials[i] = material;
+            }
         }
 
         public void StopBuilding()
         {
             IsBuilding = false;
             currentBuildingData = null;
-            placeholder.gameObject.SetActive(false);
+            //placeholder.gameObject.SetActive(false);
+            if(placeholder != null)
+                Destroy(placeholder.gameObject);
             rangeUI.Hide();
         }
 

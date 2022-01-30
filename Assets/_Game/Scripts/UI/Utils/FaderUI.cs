@@ -15,10 +15,15 @@ namespace _Game.UI.Utils
         
         protected CanvasGroup canvasGroup;
         protected bool isShowing;
+
+        private bool originalBlockRaycast;
+        private bool originalInteractable;
         
         protected virtual void Awake()
         {
             canvasGroup = GetComponent<CanvasGroup>();
+            originalBlockRaycast = canvasGroup.blocksRaycasts;
+            originalInteractable = canvasGroup.interactable;
             
             if(hideOnAwake)
                 InstantHide();
@@ -61,8 +66,8 @@ namespace _Game.UI.Utils
 
         protected virtual void OnShow()
         {
-            canvasGroup.interactable = true;
-            canvasGroup.blocksRaycasts = true;
+            canvasGroup.interactable = originalInteractable;
+            canvasGroup.blocksRaycasts = originalBlockRaycast;
             isShowing = true;
         }
 

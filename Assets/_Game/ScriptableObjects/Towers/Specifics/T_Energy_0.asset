@@ -20,4 +20,6 @@ MonoBehaviour:
       amount: -10
     - resource: {fileID: 11400000, guid: b83ddaf62256eea479574f2c83c80194, type: 2}
       amount: 0
+  maxHealth: 100
+  newPrefab: {fileID: 2022570073246318186, guid: c354ff306cc8d874e8edbd7fd85706f8, type: 3}
   energyRate: 2

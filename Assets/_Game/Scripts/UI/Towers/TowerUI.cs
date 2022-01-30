@@ -5,6 +5,7 @@ using _Game.Towers;
 using _Game.UI.Utils;
 using Ignita.Utils.Extensions;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace _Game.UI.Towers
 {
@@ -17,7 +18,7 @@ namespace _Game.UI.Towers
         [SerializeField] private TransactionUi transaction = default;
         [SerializeField] private DistanceCircleUI rangeUI = default;
         [SerializeField] private SpecialActionButton specialActionButton = default;
-        [SerializeField] private GameObject deleteButton = default;
+        [SerializeField] private Button deleteButton = default;
         [SerializeField] private UIBar bar = default;
         
         private Camera cam;
@@ -60,9 +61,10 @@ namespace _Game.UI.Towers
         private void Update()
         {
             var position = MouseHelper.Instance.WorldPoint;
+            position += (Vector3.forward + Vector3.right) * 1.0f;
             var tower = TowersManager.Instance.Elements.GetClosestElementInRange(position, range);
 
-            var validTower = tower != null && tower.TimeSinceSpawn > 1.5f;
+            var validTower = tower != null && tower.TimeSinceSpawn > 1.0f;
 
             if (isActive && !validTower)
             {
@@ -92,15 +94,15 @@ namespace _Game.UI.Towers
             currentTower = tower;
             base.Show();
             isActive = true;
-
-            var uiData = currentTower.Data.UIData;
-            deleteButton.gameObject.SetActive(uiData.canBeDeleted);
-            
-            specialActionButton.gameObject.SetActive(uiData.hasSpecialAction);
-            specialActionButton.SetSprite(uiData.specialActionSprite);
             
             foreach (var button in actionButtons) 
                 button.OnShow(tower);
+            
+            var uiData = currentTower.Data.UIData;
+            deleteButton.interactable = uiData.canBeDeleted;
+            
+            specialActionButton.gameObject.SetActive(uiData.hasSpecialAction);
+            specialActionButton.SetSprite(uiData.specialActionSprite);
         }
 
         protected override void OnShow()

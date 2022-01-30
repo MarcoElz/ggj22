@@ -14,7 +14,13 @@ namespace _Game.GameActions
         {
             towerBuilder = builder;
         }
-        
+
+        public override bool CanDoAction(AbstractTower tower)
+        {
+            if (!tower.Data.UIData.canBeDeleted) return false;
+            return base.CanDoAction(tower);
+        }
+
         public override Transaction GetTransaction(AbstractTower tower)
         {
             var transaction = new Transaction {resourceCosts = new ResourceAmount[3]};

@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 812aee2d54b6480e91bcd7c526751ce3, type: 3}
   m_Name: T_Base
   m_EditorClassIdentifier: 
+  displayName: Main Base
+  sprite: {fileID: 0}
   towerPrefab: {fileID: 0}
   labels: []
   energyCostPerSecond: 0
@@ -20,5 +22,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 74af7de8fdcc04b49b9ecf592903fc51, type: 2}
   uiData:
     canBeDeleted: 0
-    hasSpecialAction: 1
+    canBeTurnOnOff: 0
+    hasSpecialAction: 0
     specialActionSprite: {fileID: 0}

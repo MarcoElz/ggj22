@@ -11,7 +11,7 @@ namespace _Game.GameActions
 
         public override Transaction GetTransaction(AbstractTower tower) => default;
 
-        public override bool CanDoAction(AbstractTower tower) => true;
+        public override bool CanDoAction(AbstractTower tower) => tower.Data.UIData.canBeTurnOnOff;
 
         public override bool TryTransaction(AbstractTower tower)
         {
