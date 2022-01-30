@@ -68,7 +68,7 @@ namespace _Game.Towers
         public void Upgrade()
         {
             UpgradeLevel++;
-            onUpgraded();
+            OnUpgraded();
             onUpgraded?.Invoke();
         }
         

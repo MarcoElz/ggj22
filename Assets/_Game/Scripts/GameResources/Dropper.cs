@@ -1,4 +1,5 @@
-﻿using Ignita.Utils.ObjectPool;
+﻿using Ignita.Utils.Extensions;
+using Ignita.Utils.ObjectPool;
 using UnityEngine;
 
 namespace _Game.GameResources
@@ -6,8 +7,8 @@ namespace _Game.GameResources
     //TODO: What did I just code? Figure out a better way to drop stuff. WTF.
     public class Dropper : MonoBehaviour
     {
-        [SerializeField] private TakeableResource knowledgePrefab = default;
-        [SerializeField] private TakeableResource metalPrefab = default;
+        [SerializeField] private TakeableResource[] knowledgePrefabs = default;
+        [SerializeField] private TakeableResource[] metalPrefabs = default;
         [SerializeField] private float randomDistance = 1f;
         
         public void AlertToDrop(Vector3 position)
@@ -20,8 +21,8 @@ namespace _Game.GameResources
             int knowledgeDrop = Mathf.RoundToInt(probability / 50f);
             int metalDrop = Mathf.RoundToInt(probability / 20f);
             
-            Drop(knowledgePrefab, knowledgeDrop,position);
-            Drop(metalPrefab, metalDrop, position);
+            Drop(knowledgePrefabs.GetRandomElement(), knowledgeDrop,position);
+            Drop(metalPrefabs.GetRandomElement(), metalDrop, position);
         }
 
         private void Drop(TakeableResource dropPrefab, int count, Vector3 position)

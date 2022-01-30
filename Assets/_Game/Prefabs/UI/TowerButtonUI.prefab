@@ -52,11 +52,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5709968d1ea64701af0e8ce6dfc1ad4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  action: {fileID: 11400000, guid: eb32236c752f82040ae32358ba165a2c, type: 2}
   nameLabel: {fileID: 6582664054057524774}
   image: {fileID: 73139652153457540}
   button: {fileID: 4804234401030013786}
   transactionUi: {fileID: 7465110150995997067}
+  action: {fileID: 11400000, guid: eb32236c752f82040ae32358ba165a2c, type: 2}
 --- !u!114 &1470736031925726213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,7 +440,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}

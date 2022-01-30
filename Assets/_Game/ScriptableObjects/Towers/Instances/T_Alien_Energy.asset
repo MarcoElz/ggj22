@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 812aee2d54b6480e91bcd7c526751ce3, type: 3}
   m_Name: T_Alien_Energy
   m_EditorClassIdentifier: 
-  displayName: High Energy
+  displayName: Alien Energy
   sprite: {fileID: 0}
   towerPrefab: {fileID: 4301405749701122930, guid: b78a0e36536b37341a7ee7822199560d, type: 3}
   labels: []
