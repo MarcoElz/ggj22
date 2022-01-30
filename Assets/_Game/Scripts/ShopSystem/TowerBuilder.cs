@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using _Game.GameActions;
 using _Game.InputHelper;
 using _Game.Towers;
@@ -19,6 +20,8 @@ namespace _Game.ShopSystem
         [SerializeField] private BuyAction buyAction = default;
         [SerializeField] private DeleteAction deleteAction = default;
         [SerializeField] private DistanceCircleUI rangeUI = default;
+
+        private List<AntennaTower> antennas;
         
         public event Action<AbstractTower> onTowerCreated;
         public event Action<AbstractTower> onTowerDestroyed;
@@ -32,6 +35,7 @@ namespace _Game.ShopSystem
 
         private void Awake()
         {
+            antennas = new List<AntennaTower>();
             StopBuilding();
             deleteAction.Init(this);
         }
@@ -58,7 +62,15 @@ namespace _Game.ShopSystem
         private bool CanBuildInPosition(Vector3 position)
         {
             if (IsOverUI()) return false;
-            if (!IsInsideBaseRange(position)) return false;
+
+            //Inside base or radar
+            var isInsideBase = IsInsideBaseRange(position);
+            if (!isInsideBase)
+            {
+                var insideAnyAntenna = IsInsideAnyAntenna(position);
+                if (!insideAnyAntenna) return false;
+            }
+            
             if (IsCollidingWithOtherTower(position)) return false;
 
             return true;
@@ -68,10 +80,30 @@ namespace _Game.ShopSystem
 
         private bool IsInsideBaseRange(Vector3 position)
         {
-            var sqrDistanceToBase = Vector3.SqrMagnitude(position - Global.MainTower.transform.position);
             var range = Global.MainTower.CurrentAbstractData.Range;
-            var isInsideBaseRange = sqrDistanceToBase < range * range;
-            return isInsideBaseRange;
+            var isInside = IsInside(Global.MainTower.transform.position, position, range * range);
+            return isInside;
+        }
+
+        private bool IsInsideAnyAntenna(Vector3 position)
+        {
+            for (int i = 0; i < antennas.Count; i++)
+            {
+                var antenna = antennas[i];
+                var range = antenna.CurrentAbstractData.Range;
+                var isInside = IsInside(antenna.transform.position, position, range * range);
+                if (isInside)
+                    return true;
+            }
+
+            return false;
+        }
+
+        private bool IsInside(Vector3 target, Vector3 position, float sqrRange)
+        {
+            var sqrDistance = Vector3.SqrMagnitude(position - target);
+            var isInside = sqrDistance < sqrRange;
+            return isInside;
         }
 
         private bool IsCollidingWithOtherTower(Vector3 position)
@@ -137,6 +169,10 @@ namespace _Game.ShopSystem
             tower.TurnOff();
             Destroy(tower.gameObject);
             onTowerDestroyed?.Invoke(tower);
+            
+            //Radar stuff
+            if(tower is AntennaTower antenna)
+                antennas.Remove(antenna);
         }
 
         private void Build(TowerGeneralData data)
@@ -148,6 +184,11 @@ namespace _Game.ShopSystem
             tower.TurnOn();
             
             onTowerCreated?.Invoke(tower);
+            
+            
+            //Radar stuff
+            if(tower is AntennaTower antenna)
+                antennas.Add(antenna);
             
             StopBuilding();
         }
