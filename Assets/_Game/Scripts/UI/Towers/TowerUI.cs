@@ -1,4 +1,5 @@
 ﻿using System;
+using _Game.GameActions;
 using _Game.InputHelper;
 using _Game.Towers;
 using _Game.UI.Utils;
@@ -9,14 +10,20 @@ namespace _Game.UI.Towers
 {
     public class TowerUI : FaderUI
     {
+        [Header("Tower Ui Settings")]
         [SerializeField] private float range = 5f;
+
+        [Header("References")] 
+        [SerializeField] private TransactionUi transaction = default;
         [SerializeField] private SpecialActionButton specialActionButton = default;
         [SerializeField] private GameObject deleteButton = default;
+        [SerializeField] private UIBar bar = default;
         
         private Camera cam;
         private Camera Cam => cam == null ? cam = Camera.main : cam;
 
         private RectTransform rectTransform;
+        private ActionButton[] actionButtons;
         
         private AbstractTower currentTower;
         private bool isActive;
@@ -25,30 +32,50 @@ namespace _Game.UI.Towers
         {
             base.Awake();
             rectTransform = GetComponent<RectTransform>();
-            
-            InstantHide();
+            actionButtons = GetComponentsInChildren<ActionButton>();
         }
-        
+
+        private void OnEnable()
+        {
+            foreach (var button in actionButtons)
+            {
+                button.onEntered += OnActionButtonEntered;
+                button.onExited += OnActionButtonExited;
+                button.onPressed += OnActionButtonPressed;
+            }
+        }
+
+        private void OnDisable()
+        {
+            foreach (var button in actionButtons)
+            {
+                button.onEntered -= OnActionButtonEntered;
+                button.onExited -= OnActionButtonExited;
+                button.onPressed -= OnActionButtonPressed;
+            }
+        }
+
         //TODO: Move to other script, and refactor...
         private void Update()
         {
             var position = MouseHelper.Instance.WorldPoint;
             var tower = TowersManager.Instance.Elements.GetClosestElementInRange(position, range);
 
-            if (isActive && tower == null)
+            var validTower = tower != null && tower.TimeSinceSpawn > 3f;
+
+            if (isActive && !validTower)
             {
                 Hide();
                 isActive = false;
                 currentTower = null;
             }
-            else if (!isActive && tower != null)
-            {
+            else if (!isActive && validTower)
                 Init(tower);
-            }
-            else if(isActive && !currentTower.Equals(tower))
-            {
+            else if(isActive && !currentTower.Equals(tower)) 
                 Init(tower);
-            }
+
+            if(isActive && currentTower != null)
+                bar.Set(currentTower.Health,currentTower.MaxHealth);
         }
 
         private void LateUpdate()
@@ -70,6 +97,27 @@ namespace _Game.UI.Towers
             
             specialActionButton.gameObject.SetActive(uiData.hasSpecialAction);
             specialActionButton.SetSprite(uiData.specialActionSprite);
+            
+            foreach (var button in actionButtons) 
+                button.OnShow(tower);
+        }
+
+        private void OnActionButtonEntered(AbstractAction action)
+        {
+            if (!action.HasTransaction || !action.CanDoAction(currentTower))
+                return;
+            
+            transaction.Init(currentTower, action);
+        }
+
+        private void OnActionButtonExited()
+        {
+            transaction.Hide();
+        }
+
+        private void OnActionButtonPressed(AbstractAction action)
+        {
+            action.TryTransaction(currentTower);
         }
 
     }

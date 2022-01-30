@@ -1,4 +1,5 @@
 ﻿using System;
+using _Game.GameActions;
 using _Game.InputHelper;
 using _Game.Towers;
 using Unity.Mathematics;
@@ -8,9 +9,10 @@ namespace _Game.ShopSystem
 {
     public class TowerBuilder : MonoBehaviour
     {
-        [SerializeField] private Shop shop = default;
         [SerializeField] private Transform placeholder = default;
-
+        [SerializeField] private BuyAction buyAction = default;
+        [SerializeField] private DeleteAction deleteAction = default;
+        
         public event Action<AbstractTower> onTowerCreated;
         public event Action<AbstractTower> onTowerDestroyed;
         
@@ -21,6 +23,7 @@ namespace _Game.ShopSystem
         private void Awake()
         {
             StopBuilding();
+            deleteAction.Init(this);
         }
 
         private void Update()
@@ -43,7 +46,7 @@ namespace _Game.ShopSystem
                 return;
             }
             
-            var valid = shop.CanBuyTower(towerData);
+            var valid = buyAction.CanDoAction(towerData.TowerPrefab);
             if(!valid) return;
             
             currentBuildingData = towerData;
@@ -73,7 +76,7 @@ namespace _Game.ShopSystem
 
         private void Build(TowerGeneralData data)
         {
-            var valid = shop.TryBuyTower(data);
+            var valid = buyAction.TryTransaction(data.TowerPrefab);
             if(!valid) return;
             
             var tower = Instantiate(data.TowerPrefab, placeholder.transform.position, quaternion.identity);

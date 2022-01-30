@@ -17,8 +17,9 @@ namespace _Game.Towers
         private float timeBetweenAttacks;
         private float timeOfLastAttack;
         
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             RefreshStats();
         }
 

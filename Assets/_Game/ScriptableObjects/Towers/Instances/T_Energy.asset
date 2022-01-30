@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: T_Energy
   m_EditorClassIdentifier: 
   towerPrefab: {fileID: 4910381807974327920, guid: 40b83f6557efc4c4ba5feb81b279ecff, type: 3}
-  labels: []
-  energyCostPerSecond: 1
-  contaminationPerSecond: 0
+  labels:
+  - {fileID: 11400000, guid: 7ec749aa5afd0fa40aec98ba22dbcf9e, type: 2}
+  energyCostPerSecond: 0
+  contaminationPerSecond: 1
   upgradesData:
   - {fileID: 11400000, guid: 72f4d8b9ae49f4b4da8a31cefd3624bf, type: 2}
   uiData:

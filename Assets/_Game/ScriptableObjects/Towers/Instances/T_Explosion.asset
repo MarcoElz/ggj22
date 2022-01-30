@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: T_Explosion
   m_EditorClassIdentifier: 
   towerPrefab: {fileID: 326338752448640357, guid: 3ae45a8b21fe7ef49b445ae98ff4720b, type: 3}
-  labels: []
+  labels:
+  - {fileID: 11400000, guid: 9e1759bdda27ab6469ba5f53aaf16cad, type: 2}
   energyCostPerSecond: 1
   contaminationPerSecond: 0
   upgradesData:

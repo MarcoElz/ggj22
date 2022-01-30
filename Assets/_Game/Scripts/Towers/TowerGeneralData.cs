@@ -1,4 +1,7 @@
-﻿using _Game.ShopSystem;
+﻿using System.Collections.Generic;
+using System.Linq;
+using _Game.GameResources;
+using _Game.ShopSystem;
 using _Game.UI.Utils;
 using UnityEngine;
 
@@ -15,14 +18,36 @@ namespace _Game.Towers
         [SerializeField] private AbstractSpecificTowerData[] upgradesData = default;
 
         [SerializeField] private TowerUIData uiData;
-        
+
         public AbstractTower TowerPrefab => towerPrefab;
         public TowerLabel[] Labels => labels;
         public float EnergyCostPerSecond => energyCostPerSecond;
         public float ContaminationPerSecond => contaminationPerSecond;
         public AbstractSpecificTowerData[] UpgradesData => upgradesData;
-        public Cost InitialCost => upgradesData[0].Cost;
+        public Transaction InitialTransaction => upgradesData[0].Transaction;
         
         public TowerUIData UIData => uiData;
+        
+        private Dictionary<Resource, float> initialCostPerResource;
+
+        private Dictionary<Resource, float> InitialCostPerResource
+        {
+            get
+            {
+                if(initialCostPerResource == null)
+                    initialCostPerResource = InitialTransaction.resourceCosts.ToDictionary(
+                        r => r.resource,
+                        r => r.amount);
+                return initialCostPerResource;
+            }
+        }
+
+        public float GetInitialCostFor(Resource resource)
+        {
+            if (!InitialCostPerResource.ContainsKey(resource))
+                return 0f;
+            
+            return InitialCostPerResource[resource];
+        }
     }
 }

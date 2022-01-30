@@ -12,5 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f8f105430b64a3283a3607f7b7aae23, type: 3}
   m_Name: T_Base_0
   m_EditorClassIdentifier: 
-  cost:
-    resourceCosts: []
+  transaction:
+    resourceCosts:
+    - resource: {fileID: 11400000, guid: 6d81930df5960574c990aeac40ff2c15, type: 2}
+      amount: 0
+    - resource: {fileID: 11400000, guid: f92857b913dcd0d4390cb5eb035e6432, type: 2}
+      amount: 0
+    - resource: {fileID: 11400000, guid: b83ddaf62256eea479574f2c83c80194, type: 2}
+      amount: 0

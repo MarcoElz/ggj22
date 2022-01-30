@@ -5,8 +5,12 @@ namespace _Game.Towers
 {
     public abstract class AbstractSpecificTowerData : ScriptableObject
     {
-        [SerializeField] private Cost cost = default;
+        [Header("General Settings")]
+        [SerializeField] private Transaction transaction = default;
+        [SerializeField] private int maxHealth = 100;
 
-        public Cost Cost => cost;
+        public Transaction Transaction => transaction;
+
+        public int MaxHealth => maxHealth;
     }
 }

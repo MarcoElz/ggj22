@@ -8,14 +8,19 @@ namespace _Game.UI.Utils
     [RequireComponent(typeof(CanvasGroup))]
     public class FaderUI : MonoBehaviour
     {
+        [Header("Fader Settings")]
         [SerializeField] protected float showDuration = 0.25f;
         [SerializeField] protected float hideDuration = 0.25f;
+        [SerializeField] private bool hideOnAwake = true;
         
         protected CanvasGroup canvasGroup;
         
         protected virtual void Awake()
         {
             canvasGroup = GetComponent<CanvasGroup>();
+            
+            if(hideOnAwake)
+                InstantHide();
         }
 
         public void ShowDelay(float delay) => Timing.CallDelayed(delay, Show);

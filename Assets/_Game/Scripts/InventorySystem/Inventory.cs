@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using _Game.GameResources;
 using _Game.ShopSystem;
+using Ignita.Utils.Common;
 using UnityEngine;
 
 namespace _Game.InventorySystem
@@ -10,19 +11,36 @@ namespace _Game.InventorySystem
     public class Inventory : MonoBehaviour
     {
         [SerializeField] private ResourceAmount[] startResources = default;
-
+        [SerializeField] private ResourceAmount[] initialCapacity = default;
+        
         public event Action<ResourceContainer> onResourceUpdated;
 
         private Dictionary<Resource, ResourceContainer> currentResources;
 
         private void Awake()
         {
+            //Create Dictionary
             currentResources = startResources.ToDictionary(
                 (r) => r.resource,
                 (r) => new ResourceContainer(r.resource, 0));
+        }
 
+        private void Start()
+        {
+            //Set Initial Capacity
+            foreach (var resourceAmount in initialCapacity)
+                UpgradeCapacity(resourceAmount.resource, resourceAmount.amount);
+
+            //Add Initial resources
             foreach (var resourceData in startResources) 
                 Add(resourceData.resource, resourceData.amount);
+        }
+        
+        public void UpgradeCapacity(Resource resource, float amount)
+        {
+            var container = currentResources[resource];
+            container.UpgradeCapacity(amount);
+            onResourceUpdated?.Invoke(container);
         }
 
         public void Add(Resource resource, float amount)
@@ -32,59 +50,56 @@ namespace _Game.InventorySystem
             onResourceUpdated?.Invoke(container);
         }
 
-        public bool TryConsume(Resource resource, float requiredAmount)
+        public void Consume(Resource resource, float amount)
         {
             var container = currentResources[resource];
-            if (container.Amount < requiredAmount)
-                return false;
-            
-            Consume(container, requiredAmount);
-            return true;
+            var amountToRemove = Mathf.Abs(amount);
+            container.Remove(amountToRemove);
+            onResourceUpdated?.Invoke(container);
         }
 
-        public bool TryConsumeResourceCost(Cost cost)
+        public bool TryProcessTransaction(Transaction transaction)
         {
-            if (!CanConsumeCost(cost))
+            if (!CanProcessTransaction(transaction))
                 return false;
             
-            ConsumeCost(cost);
+            ProcessTransaction(transaction);
             return true;
         }
-
-        public bool CanConsumeCost(Cost cost)
+        
+        public bool CanProcessTransaction(Transaction transaction)
         {
-            for (int i = 0; i < cost.resourceCosts.Length; i++)
+            for (int i = 0; i < transaction.resourceCosts.Length; i++)
             {
-                var resourceCost = cost.resourceCosts[i];
-                var currentResource = currentResources[resourceCost.resource];
-                if (currentResource.Amount < resourceCost.amount)
+                var resourceAmount = transaction.resourceCosts[i];
+                if(resourceAmount.amount >= 0) //Free or positive
+                    continue;
+                
+                var currentResource = currentResources[resourceAmount.resource];
+                var resourceAfterTransaction = currentResource.Amount + resourceAmount.amount;
+                if (resourceAfterTransaction < 0) //Negative inventory, can not proceed
                     return false;
             }
 
             return true;
         }
 
-        private void ConsumeCost(Cost cost)
+        private void ProcessTransaction(Transaction transaction)
         {
-            for (int i = 0; i < cost.resourceCosts.Length; i++)
+            for (int i = 0; i < transaction.resourceCosts.Length; i++)
             {
-                var resourceCost = cost.resourceCosts[i];
-                var valid = TryConsume(resourceCost.resource, resourceCost.amount);
-                if(!valid)
-                    Debug.LogError("Something went wrong consuming cost");
+                var resourceAmount = transaction.resourceCosts[i];
+                if (CompareUtil.IsEqual(resourceAmount.amount, 0f)) //If zero, skip
+                    continue;
+
+                if (resourceAmount.amount > 0f) //Positive. Add it
+                    Add(resourceAmount.resource, resourceAmount.amount);
+                else //Negative, consume it
+                {
+                    Consume(resourceAmount.resource, resourceAmount.amount);
+                }
             }
         }
-
-        private void Consume(Resource resource, float amount)
-        {
-            var container = currentResources[resource];
-            Consume(container, amount);
-        }
-
-        private void Consume(ResourceContainer container, float amount)
-        {
-            container.Remove(amount);
-            onResourceUpdated?.Invoke(container);
-        }
+        
     }
 }
