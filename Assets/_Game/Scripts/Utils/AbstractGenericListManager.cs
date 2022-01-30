@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace _Game.Utils
 {
-    public abstract class AbstractGenericListManager<T> : MonoBehaviour
+    public abstract class AbstractGenericListManager<T> : MonoBehaviour where T : Component
     {
         private static AbstractGenericListManager<T> instance;
 
@@ -36,5 +36,27 @@ namespace _Game.Utils
         }
 
         private void RefreshArray() => array = list.ToArray();
+
+        protected virtual bool IsValidElement(T element) => true;
+
+        public T GetClosestValidElement(Vector3 position)
+        {
+            var closestValue = float.MaxValue;
+            T closestElement = default(T);
+            for (int i = 0; i < Elements.Length; i++)
+            {
+                var element = Elements[i];
+                if (!IsValidElement(element)) continue;
+                
+                var sqrDistance = Vector3.SqrMagnitude(element.transform.position - position);
+                if (sqrDistance < closestValue)
+                {
+                    closestElement = element;
+                    closestValue = sqrDistance;
+                }
+            }
+
+            return closestElement;
+        }
     }
 }

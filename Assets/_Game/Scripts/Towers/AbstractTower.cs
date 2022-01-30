@@ -16,6 +16,7 @@ namespace _Game.Towers
         public float Health { get; private set; }
         public float MaxHealth => currentAbstractData.MaxHealth;
         public float HealthPercentage => Health / currentAbstractData.MaxHealth;
+        public bool IsAlive => Health > 0f;
 
         public float TimeSinceSpawn => Time.time - timeOfSpawn;
         
@@ -48,6 +49,8 @@ namespace _Game.Towers
         
         public virtual void TurnOn()
         {
+            if (!IsAlive) return;
+            
             IsOn = true;
             onTurnedOn?.Invoke();
         }
@@ -93,7 +96,7 @@ namespace _Game.Towers
 
         private void Dead()
         {
-            
+            TurnOff();
         }
     }
 }
