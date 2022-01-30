@@ -1,6 +1,7 @@
 ﻿using System;
 using _Game.GameActions;
 using _Game.InputHelper;
+using _Game.ShopSystem;
 using _Game.Towers;
 using _Game.UI.Utils;
 using Ignita.Utils.Extensions;
@@ -91,6 +92,9 @@ namespace _Game.UI.Towers
 
         public void Init(AbstractTower tower)
         {
+            var builder = FindObjectOfType<TowerBuilder>();
+            if (builder.IsBuilding) return;
+            
             currentTower = tower;
             base.Show();
             isActive = true;
