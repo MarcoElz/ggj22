@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using _Game.Towers;
 using _Game.UI.Utils;
 using UnityEngine;
@@ -9,11 +10,21 @@ namespace _Game.UI.Builder
     {
         [SerializeField] private Transform parent = default;
         [SerializeField] private BuildTowerButton prefab = default;
-        
+        [SerializeField] private BaseTower mainBase = default;
+
+        private void OnEnable() => mainBase.onUpgraded += ForceRefresh;
+
+        private void OnDisable() => mainBase.onUpgraded -= ForceRefresh;
+
         protected override void OnShow()
         {
             base.OnShow();
-            var towers = Global.MainTower.GetAlUnlockedTowers();
+            ForceRefresh();
+        }
+
+        private void ForceRefresh()
+        {
+            var towers = mainBase.GetAlUnlockedTowers();
             RefreshUI(towers.ToArray());
         }
 
