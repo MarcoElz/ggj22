@@ -10,12 +10,15 @@ using UnityEngine.UI;
 
 namespace _Game.UI.Builder
 {
-    public class BuildTowerButton : ActionButton
+    //TODO: Should inherit ActionButton
+    public class BuildTowerButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         [SerializeField] private TMP_Text nameLabel = default;
         [SerializeField] private Image image = default;
         [SerializeField] private Button button = default;
         [SerializeField] private TransactionUi transactionUi = default;
+        [SerializeField] protected AbstractAction action = default;
+
 
         private TowerGeneralData currentTower;
 
@@ -27,14 +30,14 @@ namespace _Game.UI.Builder
             button.onClick.AddListener(OnPressed);
         }
 
-        public override void OnPointerEnter(PointerEventData eventData)
+        public void OnPointerEnter(PointerEventData eventData)
         {
-            base.OnPointerEnter(eventData);
+            //base.OnPointerEnter(eventData);
             transactionUi.Init(currentTower.TowerPrefab, action);
         }
-        public override void OnPointerExit(PointerEventData eventData)
+        public void OnPointerExit(PointerEventData eventData)
         {
-            base.OnPointerExit(eventData);
+            //base.OnPointerExit(eventData);
             transactionUi.Hide();
         }
 

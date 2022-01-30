@@ -54,5 +54,7 @@ namespace _Game
         }
 
         public void UnlockSpecialTowers() => IsSpecialTowersUnlocked = true;
+
+        public void Exit() => Application.Quit();
     }
 }
