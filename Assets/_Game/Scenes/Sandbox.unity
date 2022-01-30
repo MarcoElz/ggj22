@@ -851,6 +851,7 @@ GameObject:
   - component: {fileID: 351028288}
   - component: {fileID: 351028287}
   - component: {fileID: 351028286}
+  - component: {fileID: 351028289}
   m_Layer: 0
   m_Name: Btn_TurnOnOff
   m_TagString: Untagged
@@ -959,6 +960,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 351028284}
   m_CullTransparentMesh: 1
+--- !u!114 &351028289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351028284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e33ffb99959dab4987f7ae7f9e60257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: {fileID: 11400000, guid: 6266267a704e1eb43af4f5e72cad419d, type: 2}
 --- !u!1 &361774502
 GameObject:
   m_ObjectHideFlags: 0
@@ -2789,7 +2803,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1054755342}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e33ffb99959dab4987f7ae7f9e60257, type: 3}
+  m_Script: {fileID: 11500000, guid: e176d4bc5ba446feb8b547ecaa939f84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   action: {fileID: 11400000, guid: e0d02bf2ed4207748b760bf4f1524105, type: 2}

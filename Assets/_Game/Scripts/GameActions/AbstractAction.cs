@@ -20,7 +20,7 @@ namespace _Game.GameActions
             return Global.Shop.CanDoTransaction(GetTransaction(tower));
         }
         
-        public bool TryTransaction(AbstractTower tower)
+        public virtual bool TryTransaction(AbstractTower tower)
         {
             var completed = Global.Shop.TryTransaction(GetTransaction(tower));
             

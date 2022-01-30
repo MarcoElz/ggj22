@@ -43,6 +43,8 @@ namespace _Game.InventorySystem
             onResourceUpdated?.Invoke(container);
         }
 
+        public float GetCurrentAmount(Resource resource) => currentResources[resource].Amount;
+
         public void Add(Resource resource, float amount)
         {
             var container = currentResources[resource];

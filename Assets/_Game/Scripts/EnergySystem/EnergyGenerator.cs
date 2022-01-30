@@ -36,6 +36,23 @@ namespace _Game.EnergySystem
 
         private void Update()
         {
+            var energyGenerated = CalculateTotalGeneratedEnergyRate();
+            var energyConsumed = CalculateTotalUsedEnergyRate();
+            var totalEnergy = energyGenerated - energyConsumed;
+            var totalEnergyThisFrame = totalEnergy * Time.deltaTime;
+            
+            if (totalEnergyThisFrame > 0f)
+                inventory.Add(resource, totalEnergyThisFrame);
+            else 
+                inventory.Consume(resource, totalEnergyThisFrame);
+
+            var currentEnergy = inventory.GetCurrentAmount(resource);
+            if (currentEnergy <= Mathf.Epsilon)
+                OnOutOfEnergy();
+        }
+
+        private float CalculateTotalGeneratedEnergyRate()
+        {
             var totalEnergy = 0f;
             for (int i = 0; i < generators.Length; i++)
             {
@@ -45,9 +62,36 @@ namespace _Game.EnergySystem
                 totalEnergy += generator.EnergyRate;
             }
 
-            var totalEnergyThisFrame = totalEnergy * Time.deltaTime;
-            if(totalEnergyThisFrame > 0f)
-                inventory.Add(resource, totalEnergyThisFrame);
+            return totalEnergy;
+        }
+
+        private float CalculateTotalUsedEnergyRate()
+        {
+            var totalEnergy = 0f;
+            var towers = TowersManager.Instance.Elements;
+            for (int i = 0; i < towers.Length; i++)
+            {
+                var consumer = towers[i];
+                if (!consumer.IsOn) continue;
+
+                if (consumer.Data.EnergyCostPerSecond > 0f)
+                    totalEnergy += consumer.Data.EnergyCostPerSecond;
+            }
+
+            return totalEnergy;
+        }
+
+        private void OnOutOfEnergy()
+        {
+            var towers = TowersManager.Instance.Elements;
+            for (int i = 0; i < towers.Length; i++)
+            {
+                var tower = towers[i];
+                if (!tower.IsOn) continue;
+                
+                if (tower.Data.EnergyCostPerSecond > 0f)
+                    tower.TurnOff();
+            }
         }
 
         private void OnNewTowerCreated(AbstractTower tower)

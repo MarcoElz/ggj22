@@ -68,9 +68,8 @@ namespace _Game.ShopSystem
 
         public void RemoveTower(AbstractTower tower)
         {
-            //TODO: Cambio de recursos
             tower.TurnOff();
-            Destroy(tower);
+            Destroy(tower.gameObject);
             onTowerDestroyed?.Invoke(tower);
         }
 

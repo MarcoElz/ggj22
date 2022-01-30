@@ -61,7 +61,7 @@ namespace _Game.UI.Towers
             var position = MouseHelper.Instance.WorldPoint;
             var tower = TowersManager.Instance.Elements.GetClosestElementInRange(position, range);
 
-            var validTower = tower != null && tower.TimeSinceSpawn > 3f;
+            var validTower = tower != null && tower.TimeSinceSpawn > 1.5f;
 
             if (isActive && !validTower)
             {
