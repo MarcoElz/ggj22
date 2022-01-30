@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 812aee2d54b6480e91bcd7c526751ce3, type: 3}
-  m_Name: T_Alien_Attack
+  m_Name: T_Guardian
   m_EditorClassIdentifier: 
-  displayName: Alien Attack
-  sprite: {fileID: 21300000, guid: 880ff007bae61d34da934ad7c6b18523, type: 3}
-  towerPrefab: {fileID: 8561659533339992594, guid: b4ac0732c2a5bb74186e1f77381d1af0, type: 3}
+  displayName: Guardian
+  sprite: {fileID: 21300000, guid: 9bcf64123edec734f8233b883448f514, type: 3}
+  towerPrefab: {fileID: 5349952278294160898, guid: b97314107a32d494ca9c5ed78c172945, type: 3}
   labels: []
-  energyCostPerSecond: 0
+  energyCostPerSecond: 1
   contaminationPerSecond: 0
   upgradesData:
-  - {fileID: 11400000, guid: dd673ea9b0cf6d74788ef32f18978cbf, type: 2}
+  - {fileID: 11400000, guid: f609936c68a3f2e4ba2b6b41711f76de, type: 2}
   uiData:
-    canBeDeleted: 1
-    canBeTurnOnOff: 1
+    canBeDeleted: 0
+    canBeTurnOnOff: 0
     hasSpecialAction: 0
     specialActionSprite: {fileID: 0}

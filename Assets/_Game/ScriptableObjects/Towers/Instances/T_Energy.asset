@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: T_Energy
   m_EditorClassIdentifier: 
   displayName: Driller
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: bbc370be2e4a2c84fbb72d7e7994e8da, type: 3}
   towerPrefab: {fileID: 5674800839844773599, guid: 22ead86e7d1eef54daada2582f7084ce, type: 3}
   labels:
   - {fileID: 11400000, guid: 7ec749aa5afd0fa40aec98ba22dbcf9e, type: 2}

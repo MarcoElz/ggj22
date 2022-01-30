@@ -24,6 +24,7 @@ MonoBehaviour:
   newPrefab: {fileID: 0}
   unlockedTowers:
   - {fileID: 11400000, guid: e893802fe1264ed4e8736eadb7f42c22, type: 2}
+  - {fileID: 11400000, guid: 7bcf19bc03f1ffe41ace91d40507ff5e, type: 2}
   specialTowers: []
   buildRange: 10
   upgradedCapacity:

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: T_Turbina
   m_EditorClassIdentifier: 
   displayName: Wind Turbine
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: ed684929806e1f34d96d34dc21a80955, type: 3}
   towerPrefab: {fileID: 4030588373114381710, guid: 1ee854f38da6e714982318e009d37306, type: 3}
   labels:
   - {fileID: 11400000, guid: 7ec749aa5afd0fa40aec98ba22dbcf9e, type: 2}

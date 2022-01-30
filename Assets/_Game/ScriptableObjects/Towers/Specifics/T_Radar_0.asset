@@ -16,4 +16,4 @@ MonoBehaviour:
     resourceCosts: []
   maxHealth: 100
   newPrefab: {fileID: 7006343523652533256, guid: 1a148eebd134f414b8c8b65fd5108e30, type: 3}
-  checkRange: 1
+  checkRange: 10

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: T_Alien_Metals
   m_EditorClassIdentifier: 
   displayName: Alien <M>
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: bef8da865048e144bb90fffb82dde843, type: 3}
   towerPrefab: {fileID: 2965976945523350773, guid: c3b296934e8a5824e821a32baa1af24f, type: 3}
   labels: []
   energyCostPerSecond: 0

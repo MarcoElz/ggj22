@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: T_Radar
   m_EditorClassIdentifier: 
   displayName: Radar
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 1a79d77aa0f63a04cadc26704ec381fd, type: 3}
   towerPrefab: {fileID: 8592690369501052488, guid: 917509b71b69d574aad008d25105b847, type: 3}
   labels: []
   energyCostPerSecond: 1
