@@ -1,5 +1,6 @@
 ﻿using System;
 using _Game.DamageSystem;
+using DG.Tweening;
 using Ignita.Utils.ObjectPool;
 using UnityEngine;
 
@@ -44,6 +45,9 @@ namespace _Game.Creatures
         protected virtual void Initialize()
         {
             Health = startHealth;
+            var scale = transform.localScale;
+            transform.localScale = Vector3.zero;
+            transform.DOScale(Vector3.one, 0.5f);
         }
 
         public string PoolId { get; set; }

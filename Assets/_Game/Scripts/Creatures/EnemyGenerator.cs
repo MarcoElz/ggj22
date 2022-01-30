@@ -14,13 +14,14 @@ namespace _Game.Creatures
         [SerializeField] private Resource resource = default;
         [SerializeField] private EnemySpawnData[] enemyCreatures = default;
         [SerializeField] private float timeToCheck = 1f;
-        
 
         private float timeOfLastCheck;
         
         private void Update()
         {
-            if (Time.time > timeOfLastCheck + timeToCheck)
+            var currentAmount = inventory.GetCurrentAmount(resource);
+            var toCheck = timeToCheck / currentAmount;
+            if (Time.time > timeOfLastCheck + toCheck)
             {
                 Check();
                 timeOfLastCheck = Time.time;
@@ -41,7 +42,7 @@ namespace _Game.Creatures
 
         private void Spawn(EnemySpawnData spawnData)
         {
-            inventory.Consume(resource, spawnData.cost);
+            inventory.Consume(resource, spawnData.cost* 0.25f);
 
             var randomPoint = Random.insideUnitCircle * Random.Range(20f, 30f);
             var position = new Vector3(randomPoint.x, 0f, randomPoint.y);
