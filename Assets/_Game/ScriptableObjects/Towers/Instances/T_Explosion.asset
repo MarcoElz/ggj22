@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Explosion
   sprite: {fileID: 0}
+  shortDescription: Damage on area
   towerPrefab: {fileID: 326338752448640357, guid: 3ae45a8b21fe7ef49b445ae98ff4720b, type: 3}
   labels:
   - {fileID: 11400000, guid: 9e1759bdda27ab6469ba5f53aaf16cad, type: 2}

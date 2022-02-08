@@ -14,14 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Guardian
   sprite: {fileID: 21300000, guid: 9bcf64123edec734f8233b883448f514, type: 3}
+  shortDescription: Protects near towers
   towerPrefab: {fileID: 5349952278294160898, guid: b97314107a32d494ca9c5ed78c172945, type: 3}
-  labels: []
-  energyCostPerSecond: 1
+  labels:
+  - {fileID: 11400000, guid: 384fd3726d75441419a395513273ec41, type: 2}
+  energyCostPerSecond: 0
   contaminationPerSecond: 0
   upgradesData:
   - {fileID: 11400000, guid: f609936c68a3f2e4ba2b6b41711f76de, type: 2}
   uiData:
-    canBeDeleted: 0
-    canBeTurnOnOff: 0
+    canBeDeleted: 1
+    canBeTurnOnOff: 1
     hasSpecialAction: 0
     specialActionSprite: {fileID: 0}

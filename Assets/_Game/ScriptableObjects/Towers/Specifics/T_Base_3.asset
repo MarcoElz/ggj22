@@ -15,12 +15,12 @@ MonoBehaviour:
   transaction:
     resourceCosts:
     - resource: {fileID: 11400000, guid: 6d81930df5960574c990aeac40ff2c15, type: 2}
-      amount: -100
+      amount: -500
     - resource: {fileID: 11400000, guid: f92857b913dcd0d4390cb5eb035e6432, type: 2}
-      amount: -50
+      amount: -100
     - resource: {fileID: 11400000, guid: b83ddaf62256eea479574f2c83c80194, type: 2}
-      amount: -20
-  maxHealth: 100
+      amount: -50
+  maxHealth: 150
   newPrefab: {fileID: 0}
   unlockedTowers:
   - {fileID: 11400000, guid: 3e79099b530bcf44b90b184b463c1bfb, type: 2}
@@ -28,7 +28,7 @@ MonoBehaviour:
   buildRange: 10
   upgradedCapacity:
   - resource: {fileID: 11400000, guid: 6d81930df5960574c990aeac40ff2c15, type: 2}
-    amount: 5000
+    amount: 1000
   - resource: {fileID: 11400000, guid: f92857b913dcd0d4390cb5eb035e6432, type: 2}
     amount: 500
   - resource: {fileID: 11400000, guid: b83ddaf62256eea479574f2c83c80194, type: 2}

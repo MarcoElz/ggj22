@@ -23,6 +23,7 @@ namespace _Game.Towers
         public event Action onTurnedOn;
         public event Action onTurnedOff;
         public event Action onUpgraded;
+        public event Action onDestroyed;
         public event Action<float, float> onHealthChanged;
 
         public AbstractSpecificTowerData CurrentAbstractData => generalData.UpgradesData[UpgradeLevel];
@@ -105,9 +106,11 @@ namespace _Game.Towers
             }
         }
 
-        private void Dead()
+        protected virtual void Dead()
         {
             TurnOff();
+            onDestroyed?.Invoke();
+            ((TowersManager)TowersManager.Instance).OnDeadTower(this); //TODO: Improve Manager singleton, maybe something as the towers data
         }
     }
 }

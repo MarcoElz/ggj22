@@ -14,15 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Main Base
   sprite: {fileID: 0}
+  shortDescription: Main tower
   towerPrefab: {fileID: 1670249559694382961, guid: d3e7a0fa3e30143428216ad0842e2a7a, type: 3}
-  labels: []
+  labels:
+  - {fileID: 11400000, guid: 384fd3726d75441419a395513273ec41, type: 2}
   energyCostPerSecond: 0
-  contaminationPerSecond: 0
+  contaminationPerSecond: 1
   upgradesData:
   - {fileID: 11400000, guid: 74af7de8fdcc04b49b9ecf592903fc51, type: 2}
   - {fileID: 11400000, guid: b42e03e2c01da7f409b35b9de3d18015, type: 2}
   - {fileID: 11400000, guid: 8d68f228d74e6cd4a9c44d0b8ecee0da, type: 2}
   - {fileID: 11400000, guid: 490ea8e02e7bd44458ed6c74719331aa, type: 2}
+  - {fileID: 11400000, guid: 1ae05abe1aef00145a7da5612ae9bf34, type: 2}
   uiData:
     canBeDeleted: 0
     canBeTurnOnOff: 0

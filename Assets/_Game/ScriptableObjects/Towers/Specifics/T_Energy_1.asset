@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb66428ab634344af7b9216b9498888, type: 3}
+  m_Name: T_Energy_1
+  m_EditorClassIdentifier: 
+  transaction:
+    resourceCosts:
+    - resource: {fileID: 11400000, guid: 6d81930df5960574c990aeac40ff2c15, type: 2}
+      amount: -30
+    - resource: {fileID: 11400000, guid: f92857b913dcd0d4390cb5eb035e6432, type: 2}
+      amount: -10
+    - resource: {fileID: 11400000, guid: b83ddaf62256eea479574f2c83c80194, type: 2}
+      amount: -5
+  maxHealth: 50
+  newPrefab: {fileID: 2378730905308755271, guid: f2fa6debbeee28e4693f8fefb37f7f9d, type: 3}
+  energyRate: 3

@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Alien <M>
   sprite: {fileID: 21300000, guid: bef8da865048e144bb90fffb82dde843, type: 3}
+  shortDescription: Generates <metal>
   towerPrefab: {fileID: 2965976945523350773, guid: c3b296934e8a5824e821a32baa1af24f, type: 3}
-  labels: []
+  labels:
+  - {fileID: 11400000, guid: 7ec749aa5afd0fa40aec98ba22dbcf9e, type: 2}
   energyCostPerSecond: 0
   contaminationPerSecond: 0
   upgradesData:

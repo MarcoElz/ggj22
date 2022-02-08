@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resource: {fileID: 11400000, guid: f92857b913dcd0d4390cb5eb035e6432, type: 2}
-  distanceToTake: 0.4
+  distanceToTake: 0.65
 --- !u!1 &3156643293605886725
 GameObject:
   m_ObjectHideFlags: 0

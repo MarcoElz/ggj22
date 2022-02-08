@@ -1,8 +1,10 @@
 ﻿using System;
 using _Game.GameResources;
 using _Game.InventorySystem;
+using _Game.ShopSystem;
 using Ignita.Utils.Extensions;
 using Ignita.Utils.ObjectPool;
+using MEC;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -12,13 +14,22 @@ namespace _Game.Creatures
     {
         [SerializeField] private Inventory inventory = default;
         [SerializeField] private Resource resource = default;
+        [SerializeField] private EnemySpawnData tutorialCreature = default;
         [SerializeField] private EnemySpawnData[] enemyCreatures = default;
         [SerializeField] private float timeToCheck = 1f;
-
-        private float timeOfLastCheck;
+        [SerializeField] private TowerBuilder builder = default;
         
+        private float timeOfLastCheck;
+
+        private void Start()
+        {
+            Timing.CallDelayed(1f, () => Spawn(tutorialCreature));
+        }
+
         private void Update()
         {
+            if(Global.IsGameOver) return; //TODO: clean this code
+
             var currentAmount = inventory.GetCurrentAmount(resource);
             var toCheck = timeToCheck / currentAmount;
             if (Time.time > timeOfLastCheck + toCheck)
@@ -42,10 +53,23 @@ namespace _Game.Creatures
 
         private void Spawn(EnemySpawnData spawnData)
         {
-            inventory.Consume(resource, spawnData.cost* 0.25f);
+            inventory.Consume(resource, spawnData.cost* 1.0f);
 
-            var randomPoint = Random.insideUnitCircle * Random.Range(20f, 30f);
+            var minDistance = 20f;
+            var maxDistance = 30f;
+
+            if (builder.Antennas.Count > 0)
+            {
+                var anttenna = builder.Antennas.GetRandomElement();
+                var extraDistance = Vector3.Distance(anttenna.transform.position, Global.MainTower.transform.position);
+
+                minDistance += extraDistance;
+                maxDistance += extraDistance;
+            }
+            
+            var randomPoint = Random.insideUnitCircle * Random.Range(minDistance, maxDistance);
             var position = new Vector3(randomPoint.x, 0f, randomPoint.y);
+            
             
             PoolManager.Spawn(spawnData.prefab, position, Quaternion.identity);
         }

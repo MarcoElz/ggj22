@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UIAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 8
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 9f5075edc1fac4a4abf518cd7ffd8014, type: 3}
+    - {fileID: 102900000, guid: da27124df0d73774994f0e5f94cc2fd2, type: 3}
+    - {fileID: 2800000, guid: 1417925862d8b374084f50661ffd703c, type: 3}
+    - {fileID: 2800000, guid: 14cd99c99d7525743a94aa2b626d9783, type: 3}
+    - {fileID: 2800000, guid: 105aa01b1530a1e48ba3df5d4a1cae8b, type: 3}
+    - {fileID: 2800000, guid: 065360da7d5de864e930e054a0ce3dd9, type: 3}
+    - {fileID: 2800000, guid: 408bc061f0ab03842b9ca0cf08a91783, type: 3}
+    - {fileID: 2800000, guid: 02bc6413e9c541c4c8fd2e7501c27232, type: 3}
+    - {fileID: 2800000, guid: 95536a7810238db4abb5c02d9b700c92, type: 3}
+    totalSpriteSurfaceArea: 3031777
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 90ea9010d6ff4944793e6aaf15ddb73e, type: 3}
+  - {fileID: 21300000, guid: cdba4b40daa2f254a853dc50d88f3226, type: 3}
+  - {fileID: 21300000, guid: 2071dc909d19814439efb4553bb655ed, type: 3}
+  - {fileID: 21300000, guid: 8cdec3e0714d1934fa7e11e4d3711729, type: 3}
+  - {fileID: 21300000, guid: 408bc061f0ab03842b9ca0cf08a91783, type: 3}
+  - {fileID: 21300000, guid: a14f87e1915f27443abf95117f2c6662, type: 3}
+  - {fileID: 21300000, guid: 9bcf64123edec734f8233b883448f514, type: 3}
+  - {fileID: 21300000, guid: f5262a9266d38544e933db9e0c4cd0ad, type: 3}
+  - {fileID: 21300000, guid: 02bc6413e9c541c4c8fd2e7501c27232, type: 3}
+  - {fileID: 21300000, guid: 77b64dc3be90b76488a9abb4b91f8d47, type: 3}
+  - {fileID: 21300000, guid: b2eb610438642a04fa1a22ce35ecfbc9, type: 3}
+  - {fileID: 21300000, guid: 51835bd46d5057948b5e82e9bb7dac5c, type: 3}
+  - {fileID: 21300000, guid: c47ea92620e4d7040845997ff24d37cc, type: 3}
+  - {fileID: 21300000, guid: bef8da865048e144bb90fffb82dde843, type: 3}
+  - {fileID: 21300000, guid: 880ff007bae61d34da934ad7c6b18523, type: 3}
+  - {fileID: 21300000, guid: 1417925862d8b374084f50661ffd703c, type: 3}
+  - {fileID: 21300000, guid: 95536a7810238db4abb5c02d9b700c92, type: 3}
+  - {fileID: 21300000, guid: af372788026dcd94299771756c3fe2e3, type: 3}
+  - {fileID: 21300000, guid: ed684929806e1f34d96d34dc21a80955, type: 3}
+  - {fileID: 21300000, guid: d08a2e2977867e04188c01004489abec, type: 3}
+  - {fileID: 21300000, guid: a729e7694f2a30d49bfcd033e6b9fb12, type: 3}
+  - {fileID: 21300000, guid: c5c56999d9ea5a24cb9b8fc0b21ca6a9, type: 3}
+  - {fileID: 21300000, guid: 14cd99c99d7525743a94aa2b626d9783, type: 3}
+  - {fileID: 21300000, guid: 1a79d77aa0f63a04cadc26704ec381fd, type: 3}
+  - {fileID: 21300000, guid: 7f41af9a40fd5774b95b1df914288401, type: 3}
+  - {fileID: 21300000, guid: 065360da7d5de864e930e054a0ce3dd9, type: 3}
+  - {fileID: 21300000, guid: 105aa01b1530a1e48ba3df5d4a1cae8b, type: 3}
+  - {fileID: 21300000, guid: bbc370be2e4a2c84fbb72d7e7994e8da, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - contaminacion
+  - upgrade
+  - construir
+  - Music
+  - RoundSquared
+  - borrar
+  - Guardian
+  - rayo
+  - SquareRy8
+  - Alien_K
+  - foco on
+  - metal
+  - Shooter
+  - Alien_Metal
+  - Alien_Attacj
+  - settings
+  - circle256
+  - Antenna
+  - Wind
+  - Alien_Sun
+  - foco off
+  - conocimiento
+  - circle_01
+  - Radar
+  - reparar
+  - gradiant_2
+  - circle64
+  - Drill
+  m_RenderDataMap: {}
+  m_Tag: UIAtlas
+  m_IsVariant: 0

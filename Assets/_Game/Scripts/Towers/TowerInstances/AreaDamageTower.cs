@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using _Game.Creatures;
 using _Game.Utils;
 using Ignita.Utils.Extensions;
@@ -15,9 +16,12 @@ namespace _Game.Towers
         private float timeBetweenAttacks;
         private float timeOfLastAttack;
 
+        private List<AbstractCreature> targets;
+
         protected override void Awake()
         {
             base.Awake();
+            targets = new List<AbstractCreature>();
             RefreshStats();
         }
 
@@ -36,7 +40,7 @@ namespace _Game.Towers
 
         public void Attack()
         {
-            var targets = CreaturesManager.Instance.Elements.GetAllElementInRange(transform.position, CurrentData.Range);
+            targets = CreaturesManager.Instance.Elements.GetAllElementInRange(transform.position, CurrentData.Range, targets);
             if(targets.Count == 0) return;
 
             foreach (var target in targets)

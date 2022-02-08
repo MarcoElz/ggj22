@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Wind Turbine
   sprite: {fileID: 21300000, guid: ed684929806e1f34d96d34dc21a80955, type: 3}
+  shortDescription: Generates energy
   towerPrefab: {fileID: 4030588373114381710, guid: 1ee854f38da6e714982318e009d37306, type: 3}
   labels:
   - {fileID: 11400000, guid: 7ec749aa5afd0fa40aec98ba22dbcf9e, type: 2}
@@ -21,6 +22,10 @@ MonoBehaviour:
   contaminationPerSecond: 0
   upgradesData:
   - {fileID: 11400000, guid: dbe2e38186561a642ac1e2c64ad9c73e, type: 2}
+  - {fileID: 11400000, guid: 296da6aec3555b545910d99a6a40c675, type: 2}
+  - {fileID: 11400000, guid: c86a4021834cccf4ca9f8d853ec366c7, type: 2}
+  - {fileID: 11400000, guid: 5b73391a91f9f6f48842b9645a3d532e, type: 2}
+  - {fileID: 11400000, guid: 519c4d0ec97ef754bbef2b092f436d68, type: 2}
   uiData:
     canBeDeleted: 1
     canBeTurnOnOff: 1

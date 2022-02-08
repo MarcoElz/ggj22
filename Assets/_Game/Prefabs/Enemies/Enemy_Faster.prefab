@@ -188,7 +188,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1116042705922413058}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.10455363, z: 0}
+  m_LocalPosition: {x: 0, y: 0.10455363, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4882825120270969243}
@@ -431,7 +431,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5195190888318872078}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.7050091, z: 0}
+  m_LocalPosition: {x: 0, y: 0.7050091, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 94662069275049451}
@@ -516,9 +516,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5226593664413381409}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.19727, y: 0.00000047683716, z: -2.0770054}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.85586, y: 0.85586, z: 0.85586}
   m_Children:
   - {fileID: 7082901169853141684}
   - {fileID: 5557475526475358351}
@@ -558,11 +558,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22d06da8a6904dcbaf6ef65d144f6170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 30
+  startHealth: 50
   deadParticles: {fileID: 5417032046544662148, guid: 77791f79358f9634d9bc9606e43ea500, type: 3}
   attackRange: 1.2
-  damageRate: 1
-  speed: 1.25
+  damageRate: 0.75
+  speed: 1
 --- !u!1 &5249057228622221506
 GameObject:
   m_ObjectHideFlags: 0

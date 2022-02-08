@@ -13,18 +13,20 @@ namespace _Game.Towers
         [Header("Builder UI")]
         [SerializeField] private string displayName = "";
         [SerializeField] private Sprite sprite = default;
+        [SerializeField] private string shortDescription = "";
         
         [Header("General")]
         [SerializeField] private AbstractTower towerPrefab = default;
         [SerializeField] private TowerLabel[] labels = default;
-        [SerializeField] private float energyCostPerSecond = 1f;
-        [SerializeField] private float contaminationPerSecond = 0f;
+        [SerializeField] private float energyCostPerSecond = 1f; //TODO: Move to specific tower data
+        [SerializeField] private float contaminationPerSecond = 0f; //TODO: Move to specific tower data
 
         [SerializeField] private AbstractSpecificTowerData[] upgradesData = default;
 
         [SerializeField] private TowerUIData uiData;
 
         public string DisplayName => displayName;
+        public string ShortDescription => shortDescription;
         public Sprite Sprite => sprite;
         public AbstractTower TowerPrefab => towerPrefab;
         public TowerLabel[] Labels => labels;

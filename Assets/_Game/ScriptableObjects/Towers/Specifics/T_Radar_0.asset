@@ -15,11 +15,12 @@ MonoBehaviour:
   transaction:
     resourceCosts:
     - resource: {fileID: 11400000, guid: 6d81930df5960574c990aeac40ff2c15, type: 2}
-      amount: -30
+      amount: -200
     - resource: {fileID: 11400000, guid: f92857b913dcd0d4390cb5eb035e6432, type: 2}
-      amount: -15
+      amount: -50
     - resource: {fileID: 11400000, guid: b83ddaf62256eea479574f2c83c80194, type: 2}
-      amount: -1
-  maxHealth: 100
+      amount: -10
+  maxHealth: 50
   newPrefab: {fileID: 7006343523652533256, guid: 1a148eebd134f414b8c8b65fd5108e30, type: 3}
-  checkRange: 10
+  checkRange: 8
+  controlLabel: {fileID: 11400000, guid: 9e1759bdda27ab6469ba5f53aaf16cad, type: 2}

@@ -44,11 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22d06da8a6904dcbaf6ef65d144f6170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 80
+  startHealth: 100
   deadParticles: {fileID: 5417032046544662148, guid: 77791f79358f9634d9bc9606e43ea500, type: 3}
   attackRange: 1.2
-  damageRate: 2
-  speed: 0.75
+  damageRate: 1
+  speed: 0.5
 --- !u!1001 &84797331456415276
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62,15 +62,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3fbb0c525a9fe0a42ad00b980043318f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.2
+      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3fbb0c525a9fe0a42ad00b980043318f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.2
+      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3fbb0c525a9fe0a42ad00b980043318f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.2
+      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3fbb0c525a9fe0a42ad00b980043318f, type: 3}
       propertyPath: m_LocalPosition.x

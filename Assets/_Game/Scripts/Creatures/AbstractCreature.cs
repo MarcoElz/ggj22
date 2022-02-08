@@ -13,7 +13,7 @@ namespace _Game.Creatures
             
         public float Health { get; protected set; }
 
-        protected virtual void Awake()
+        protected virtual void Start()
         {
             Initialize();
         }
@@ -44,8 +44,7 @@ namespace _Game.Creatures
 
         protected virtual void Initialize()
         {
-            Health = startHealth;
-            var scale = transform.localScale;
+            Health = startHealth  + (15f * Global.Difficult - 1f);
             transform.localScale = Vector3.zero;
             transform.DOScale(Vector3.one, 0.5f);
         }

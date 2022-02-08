@@ -20,7 +20,7 @@ MonoBehaviour:
       amount: 0
     - resource: {fileID: 11400000, guid: b83ddaf62256eea479574f2c83c80194, type: 2}
       amount: 0
-  maxHealth: 100
+  maxHealth: 50
   newPrefab: {fileID: 0}
   unlockedTowers:
   - {fileID: 11400000, guid: 18c05b21420f14447b341a30ed7b51bf, type: 2}
@@ -39,4 +39,4 @@ MonoBehaviour:
   - resource: {fileID: 11400000, guid: b83ddaf62256eea479574f2c83c80194, type: 2}
     amount: 1
   - resource: {fileID: 11400000, guid: 6eaea064ad3537a47a28836683b67596, type: 2}
-    amount: 100
+    amount: 300

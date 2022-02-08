@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 812aee2d54b6480e91bcd7c526751ce3, type: 3}
+  m_Name: T_Metals
+  m_EditorClassIdentifier: 
+  displayName: M. Extractor
+  sprite: {fileID: 21300000, guid: bbc370be2e4a2c84fbb72d7e7994e8da, type: 3}
+  shortDescription: Generates metals
+  towerPrefab: {fileID: 5098726045590639930, guid: f2c0e6469f696be42ab0fc5b3b651f0f, type: 3}
+  labels:
+  - {fileID: 11400000, guid: 7ec749aa5afd0fa40aec98ba22dbcf9e, type: 2}
+  energyCostPerSecond: 0
+  contaminationPerSecond: 1
+  upgradesData:
+  - {fileID: 11400000, guid: d6926bb7318da5847a98d4592f07abee, type: 2}
+  uiData:
+    canBeDeleted: 1
+    canBeTurnOnOff: 1
+    hasSpecialAction: 0
+    specialActionSprite: {fileID: 0}

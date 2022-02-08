@@ -40,7 +40,7 @@ MonoBehaviour:
     passOperation: 0
     failOperation: 0
     zFailOperation: 0
-  m_ShadowTransparentReceive: 1
+  m_ShadowTransparentReceive: 0
   m_RenderingMode: 0
   m_AccurateGbufferNormals: 0
 --- !u!114 &3479499157075271987
@@ -61,7 +61,7 @@ MonoBehaviour:
     Downsample: 1
     Source: 0
     NormalSamples: 0
-    Intensity: 10
-    DirectLightingStrength: 0.779
-    Radius: 0.6
-    SampleCount: 12
+    Intensity: 6.56
+    DirectLightingStrength: 1
+    Radius: 0.5
+    SampleCount: 4

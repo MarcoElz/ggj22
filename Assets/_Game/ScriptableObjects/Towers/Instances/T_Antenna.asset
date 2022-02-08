@@ -14,12 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Antenna
   sprite: {fileID: 21300000, guid: af372788026dcd94299771756c3fe2e3, type: 3}
+  shortDescription: Expands your building area
   towerPrefab: {fileID: 4413066738937860617, guid: d265481d7f2020647ad7a22ea9d71888, type: 3}
-  labels: []
+  labels:
+  - {fileID: 11400000, guid: 3a52cfd59da67f944b2b86390a4c742c, type: 2}
   energyCostPerSecond: 1
   contaminationPerSecond: 0
   upgradesData:
   - {fileID: 11400000, guid: 14a42d4c3033384439dc0f8c25d36357, type: 2}
+  - {fileID: 11400000, guid: 8013a0c8cc2861e4992fcd69fd771359, type: 2}
+  - {fileID: 11400000, guid: 26a1acb641daeb8428be566de1b5277b, type: 2}
+  - {fileID: 11400000, guid: 47651ec5d83989b4398e463fcbdee7cc, type: 2}
   uiData:
     canBeDeleted: 1
     canBeTurnOnOff: 1

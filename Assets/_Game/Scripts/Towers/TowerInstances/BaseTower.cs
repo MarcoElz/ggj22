@@ -39,5 +39,11 @@ namespace _Game.Towers
 
             Debug.Log($"Upgraded end {UpgradeLevel}");
         }
+
+        protected override void Dead()
+        {
+            base.Dead();
+            Global.Instance.GameOver();
+        }
     }
 }

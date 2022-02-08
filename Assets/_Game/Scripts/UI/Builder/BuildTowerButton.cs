@@ -18,6 +18,7 @@ namespace _Game.UI.Builder
         [SerializeField] private Button button = default;
         [SerializeField] private TransactionUi transactionUi = default;
         [SerializeField] protected AbstractAction action = default;
+        [SerializeField] private TMP_Text descriptionLabel = default;
 
 
         private TowerGeneralData currentTower;
@@ -26,6 +27,7 @@ namespace _Game.UI.Builder
         {
             currentTower = tower;
             nameLabel.text = tower.DisplayName;
+            descriptionLabel.text = tower.ShortDescription;
             image.sprite = tower.Sprite;
             button.onClick.AddListener(OnPressed);
         }

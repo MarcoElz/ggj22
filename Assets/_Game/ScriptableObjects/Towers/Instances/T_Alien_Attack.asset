@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Alien Attack
   sprite: {fileID: 21300000, guid: 880ff007bae61d34da934ad7c6b18523, type: 3}
+  shortDescription: Shoot at enemies
   towerPrefab: {fileID: 8561659533339992594, guid: b4ac0732c2a5bb74186e1f77381d1af0, type: 3}
-  labels: []
+  labels:
+  - {fileID: 11400000, guid: 9e1759bdda27ab6469ba5f53aaf16cad, type: 2}
   energyCostPerSecond: 0
   contaminationPerSecond: 0
   upgradesData:

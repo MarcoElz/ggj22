@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Shooter
   sprite: {fileID: 21300000, guid: c47ea92620e4d7040845997ff24d37cc, type: 3}
+  shortDescription: Shoot at enemies
   towerPrefab: {fileID: 7748052736141519106, guid: 4a9223a4c6ed1bf4a8797049ca8ee237, type: 3}
   labels:
   - {fileID: 11400000, guid: 9e1759bdda27ab6469ba5f53aaf16cad, type: 2}
@@ -23,6 +24,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6db0d99949a17684b8899a8d2c637da2, type: 2}
   - {fileID: 11400000, guid: f282107745a250e4db72a202ad857102, type: 2}
   - {fileID: 11400000, guid: 2bc1d83171fc92043899159780a3774c, type: 2}
+  - {fileID: 11400000, guid: f5e4230e64477e145a64673db72b6eae, type: 2}
   uiData:
     canBeDeleted: 1
     canBeTurnOnOff: 1

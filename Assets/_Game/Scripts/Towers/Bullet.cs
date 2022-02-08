@@ -6,6 +6,8 @@ using UnityEngine;
 
 namespace _Game.Towers
 {
+    //Optimized bullet that does not use any physics.
+    //TODO: Consider using physics if required
     public class Bullet : MonoBehaviour, IPoolObject
     {
         [SerializeField] private float speed = 10f;
@@ -44,19 +46,24 @@ namespace _Game.Towers
         private void MoveToTarget()
         {
             currentTime += timeRatioToArrive * Time.deltaTime;
-            transform.position = Vector3.Lerp(startPosition, target.transform.position, currentTime);
+            var targetPosition = target.transform.position;
+            targetPosition.y = transform.position.y;
+            transform.position = Vector3.Lerp(startPosition, targetPosition, currentTime);
             CheckIfNearToDamage();
         }
 
         private void MoveForward()
         {
-            //TODO:...
+            //TODO:Continue moving if the target is gone
             Dead();
         }
 
         private void CheckIfNearToDamage()
         {
-            var sqrDistance = Vector3.SqrMagnitude(target.transform.position - transform.position);
+            //TODO: Optimize check to only use X and Z
+            var targetPosition = target.transform.position;
+            targetPosition.y = transform.position.y;
+            var sqrDistance = Vector3.SqrMagnitude(targetPosition - transform.position);
             if(sqrDistance < sqrDistanceToDamage)
                 Damage(target);
         }

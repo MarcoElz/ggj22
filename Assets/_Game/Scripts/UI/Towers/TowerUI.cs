@@ -1,8 +1,10 @@
 ﻿using System;
 using _Game.GameActions;
+using _Game.GameResources;
 using _Game.InputHelper;
 using _Game.ShopSystem;
 using _Game.Towers;
+using _Game.UI.Inventory;
 using _Game.UI.Utils;
 using Ignita.Utils.Extensions;
 using UnityEngine;
@@ -21,6 +23,8 @@ namespace _Game.UI.Towers
         [SerializeField] private SpecialActionButton specialActionButton = default;
         [SerializeField] private Button deleteButton = default;
         [SerializeField] private UIBar bar = default;
+        [SerializeField] private ResourceAmountUI energyPerTime = default;
+        [SerializeField] private ResourceAmountUI contaminationPerTime = default;
         
         private Camera cam;
         private Camera Cam => cam == null ? cam = Camera.main : cam;
@@ -69,14 +73,20 @@ namespace _Game.UI.Towers
 
             if (isActive && !validTower)
             {
-                Hide();
-                isActive = false;
-                currentTower = null;
+                if(!MouseHelper.Instance.IsOverUI())
+                {
+                    Hide();
+                    isActive = false;
+                    currentTower = null;
+                }
             }
             else if (!isActive && validTower)
                 Init(tower);
-            else if(isActive && !currentTower.Equals(tower)) 
-                Init(tower);
+            else if (isActive && !currentTower.Equals(tower))
+            {
+                if(!MouseHelper.Instance.IsOverUI())
+                    Init(tower);
+            }
 
             if(isActive && currentTower != null)
                 bar.Set(currentTower.Health,currentTower.MaxHealth);
@@ -84,7 +94,8 @@ namespace _Game.UI.Towers
 
         private void LateUpdate()
         {
-            if(!isActive) return;
+            if (!isActive) return;
+            if (currentTower == null) return;
 
             var position = Cam.WorldToScreenPoint(currentTower.transform.position);
             rectTransform.position = position;
@@ -99,6 +110,8 @@ namespace _Game.UI.Towers
             base.Show();
             isActive = true;
             
+            SetCostPerTime();
+            
             foreach (var button in actionButtons) 
                 button.OnShow(tower);
             
@@ -107,6 +120,21 @@ namespace _Game.UI.Towers
             
             specialActionButton.gameObject.SetActive(uiData.hasSpecialAction);
             specialActionButton.SetSprite(uiData.specialActionSprite);
+        }
+
+        private void SetCostPerTime()
+        {
+            var energy = -currentTower.Data.EnergyCostPerSecond;
+            var contamination = currentTower.Data.ContaminationPerSecond;
+
+            if (currentTower is IEnergyGenerator generator) 
+                energy += generator.EnergyRate;
+
+            if (currentTower is BaseTower baseTower)
+                contamination += baseTower.Data.ContaminationPerSecond * Global.Difficult;
+
+            energyPerTime.Init(energy);
+            contaminationPerTime.Init(contamination);
         }
 
         protected override void OnShow()
@@ -123,8 +151,6 @@ namespace _Game.UI.Towers
 
         private void OnActionButtonEntered(AbstractAction action)
         {
-            
-            
             transaction.Init(currentTower, action);
         }
 

@@ -15,14 +15,14 @@ MonoBehaviour:
   transaction:
     resourceCosts:
     - resource: {fileID: 11400000, guid: 6d81930df5960574c990aeac40ff2c15, type: 2}
-      amount: -50
+      amount: -150
     - resource: {fileID: 11400000, guid: f92857b913dcd0d4390cb5eb035e6432, type: 2}
-      amount: -15
+      amount: -25
     - resource: {fileID: 11400000, guid: b83ddaf62256eea479574f2c83c80194, type: 2}
-      amount: -5
+      amount: -20
   maxHealth: 100
   newPrefab: {fileID: 7231310766246025538, guid: 58f8af0bdbaf9804bbbfea527311af7c, type: 3}
-  range: 12
+  range: 10
   damage: 30
-  attackRate: 0.5
+  attackRate: 1.5
   bulletPrefab: {fileID: 6628729620009440726, guid: 56160e93410dd264ca3ead4b80257d9a, type: 3}

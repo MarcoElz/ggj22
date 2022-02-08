@@ -68,5 +68,24 @@ namespace Ignita.Utils.Extensions
 
             return elementsInRange;
         }
+        
+        public static List<T> GetAllElementInRange<T>(this T[] elements, Vector3 position, float range, List<T> list) where T : Component
+        {
+            var sqrRange = range * range;
+            
+            list.Clear();
+            for (int i = 0; i < elements.Length; i++)
+            {
+                var element = elements[i];
+                var sqrDistance = Vector3.SqrMagnitude(element.transform.position - position);
+                if(sqrDistance > sqrRange) continue;
+
+                list.Add(element);
+            }
+
+            return list;
+        }
     }
+    
+    
 }

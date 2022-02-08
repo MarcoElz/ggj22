@@ -6,7 +6,10 @@ namespace _Game.Towers
     public class RadarData : AbstractSpecificTowerData
     {
         [SerializeField] private float checkRange = 1f;
+        [SerializeField] private TowerLabel controlLabel = default;
 
         public override float Range => checkRange;
+
+        public TowerLabel ControlLabel => controlLabel;
     }
 }

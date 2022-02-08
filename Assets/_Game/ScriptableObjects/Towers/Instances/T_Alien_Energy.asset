@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Alien Energy
   sprite: {fileID: 21300000, guid: d08a2e2977867e04188c01004489abec, type: 3}
+  shortDescription: Generates energy
   towerPrefab: {fileID: 4301405749701122930, guid: b78a0e36536b37341a7ee7822199560d, type: 3}
-  labels: []
+  labels:
+  - {fileID: 11400000, guid: 7ec749aa5afd0fa40aec98ba22dbcf9e, type: 2}
   energyCostPerSecond: 0
   contaminationPerSecond: 0
   upgradesData:

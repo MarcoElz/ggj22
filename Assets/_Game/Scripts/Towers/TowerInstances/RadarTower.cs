@@ -1,4 +1,5 @@
-﻿using _Game.Creatures;
+﻿using System.Collections.Generic;
+using _Game.Creatures;
 using Ignita.Utils.Extensions;
 using UnityEngine;
 
@@ -15,7 +16,15 @@ namespace _Game.Towers
         private float timeOfLastCheck;
 
         private bool isRadarWarning;
-        
+
+        private List<AbstractTower> towersInRange;
+
+        protected override void Awake()
+        {
+            base.Awake();
+            towersInRange = new List<AbstractTower>();
+        }
+
         protected override void Update()
         {
             if(!IsOn) return;
@@ -69,13 +78,13 @@ namespace _Game.Towers
 
         private void TurnAllOff()
         {
-            var towersInRange =
-                TowersManager.Instance.Elements.GetAllElementInRange(transform.position, CurrentData.Range);
+            towersInRange = TowersManager.Instance.Elements.GetAllElementInRange(transform.position, CurrentData.Range, towersInRange);
             for (int i = 0; i < towersInRange.Count; i++)
             {
                 var tower = towersInRange[i];
                 if(tower.Equals(this)) continue;
                 if (!tower.Data.UIData.canBeTurnOnOff) continue;
+                if (!HasLabel(tower)) continue;
                 
                 tower.TurnOff();
             }
@@ -83,16 +92,31 @@ namespace _Game.Towers
 
         private void TurnAllOn()
         {
-            var towersInRange =
-                TowersManager.Instance.Elements.GetAllElementInRange(transform.position, CurrentData.Range);
+            towersInRange = TowersManager.Instance.Elements.GetAllElementInRange(transform.position, CurrentData.Range, towersInRange);
             for (int i = 0; i < towersInRange.Count; i++)
             {
                 var tower = towersInRange[i];
                 if(tower.Equals(this)) continue;
                 if (!tower.Data.UIData.canBeTurnOnOff) continue;
+                if (!HasLabel(tower)) continue;
                 
                 tower.TurnOn();
             }
+        }
+
+
+        private bool HasLabel(AbstractTower tower)
+        {
+            var label = CurrentData.ControlLabel;
+            var labels = tower.Data.Labels;
+            for (int i = 0; i < labels.Length; i++)
+            {
+                var towerLabel = labels[i];
+                if (towerLabel.Equals(label))
+                    return true;
+            }
+
+            return false;
         }
     }
 }

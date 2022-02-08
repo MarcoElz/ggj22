@@ -25,6 +25,7 @@ namespace _Game.ShopSystem
         [SerializeField] private TimeParticles removeParticles = default;
 
         private List<AntennaTower> antennas;
+        public List<AntennaTower> Antennas => antennas; //TODO: Nop
 
         private bool firstAntenna;
         
@@ -66,7 +67,7 @@ namespace _Game.ShopSystem
 
         private bool CanBuildInPosition(Vector3 position)
         {
-            if (IsOverUI()) return false;
+            if (MouseHelper.Instance.IsOverUI()) return false;
 
             //Inside base or radar
             var isInsideBase = IsInsideBaseRange(position);
@@ -81,7 +82,6 @@ namespace _Game.ShopSystem
             return true;
         }
         
-        private bool IsOverUI() =>EventSystem.current.IsPointerOverGameObject();
 
         private bool IsInsideBaseRange(Vector3 position)
         {

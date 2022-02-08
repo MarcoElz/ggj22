@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Music
   sprite: {fileID: 21300000, guid: 8cdec3e0714d1934fa7e11e4d3711729, type: 3}
+  shortDescription: Plays old recordings
   towerPrefab: {fileID: 1953861222837024547, guid: 395698f76de19094e845311d34f840ed, type: 3}
-  labels: []
+  labels:
+  - {fileID: 11400000, guid: 384fd3726d75441419a395513273ec41, type: 2}
   energyCostPerSecond: 0
   contaminationPerSecond: 0
   upgradesData:

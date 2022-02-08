@@ -14,12 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Radar
   sprite: {fileID: 21300000, guid: 1a79d77aa0f63a04cadc26704ec381fd, type: 3}
+  shortDescription: Turn On/Off offensive towers when near enemies
   towerPrefab: {fileID: 8592690369501052488, guid: 917509b71b69d574aad008d25105b847, type: 3}
-  labels: []
-  energyCostPerSecond: 1
+  labels:
+  - {fileID: 11400000, guid: 3a52cfd59da67f944b2b86390a4c742c, type: 2}
+  energyCostPerSecond: 2
   contaminationPerSecond: 0
   upgradesData:
   - {fileID: 11400000, guid: 0312403cc4afc7648ba94551130eac67, type: 2}
+  - {fileID: 11400000, guid: 0d0ceb3313fcf774ca20deafc79b5290, type: 2}
+  - {fileID: 11400000, guid: efa14b7eb2ea0d9438d9acd45627b534, type: 2}
   uiData:
     canBeDeleted: 1
     canBeTurnOnOff: 1

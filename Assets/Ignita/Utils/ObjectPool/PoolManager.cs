@@ -1,12 +1,9 @@
 ﻿using System.Collections.Generic;
-using CommonUtils;
-using CommonUtils.ComponentCaching;
-using CommonUtils.Extensions;
 using UnityEngine;
 
 namespace Ignita.Utils.ObjectPool
 {
-    public class PoolManager : MonoBehaviour, IVerbosable
+    public class PoolManager : MonoBehaviour
     {
         [SerializeField] private bool verbose = false;
         
@@ -79,7 +76,6 @@ namespace Ignita.Utils.ObjectPool
         {
             if (string.IsNullOrEmpty(poolObject.PoolId) || !Instance.pools.ContainsKey(poolObject.PoolId))
             {
-                Instance.DebugLog($"Object {poolObject.name} has no pool. Destroying instead...");
                 Destroy(poolObject.gameObject);
                 return;
             }
@@ -89,20 +85,19 @@ namespace Ignita.Utils.ObjectPool
             poolObject.gameObject.SetActive(false);
             Instance.pools[poolObject.PoolId].Pool(poolObject as Component);
         }
-        public static void ReturnToPool(GameObject clone)
-        {
-            var poolObject = clone.GetCachedComponent<IPoolObject>();
-
-            if (poolObject == null)
-            {
-                Instance.DebugLog($"Object {clone.name} it's not an IPoolObject. Destroying instead...");
-                Destroy(clone);
-                return;
-            }
-            
-            ReturnToPool(poolObject);
-
-        }
+        // public static void ReturnToPool(GameObject clone)
+        // {
+        //     var poolObject = clone.GetCachedComponent<IPoolObject>();
+        //
+        //     if (poolObject == null)
+        //     {
+        //         Destroy(clone);
+        //         return;
+        //     }
+        //     
+        //     ReturnToPool(poolObject);
+        //
+        // }
 
         /*public void PoolObject(GameObject original, GameObject clone, float delay)
         {

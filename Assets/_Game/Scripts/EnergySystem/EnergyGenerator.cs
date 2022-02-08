@@ -124,6 +124,9 @@ namespace _Game.EnergySystem
                     total += tower.Data.ContaminationPerSecond;
             }
 
+            if(!Global.IsGameOver) //TODO: clean this code
+                total += Global.MainTower.Data.ContaminationPerSecond * Global.Difficult; //TODO: Move to scriptable object
+
             return total;
         }
 

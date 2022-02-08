@@ -126,4 +126,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resource: {fileID: 11400000, guid: b83ddaf62256eea479574f2c83c80194, type: 2}
-  distanceToTake: 0.4
+  distanceToTake: 0.65

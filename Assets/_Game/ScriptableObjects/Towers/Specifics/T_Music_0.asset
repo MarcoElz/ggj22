@@ -24,5 +24,3 @@ MonoBehaviour:
   newPrefab: {fileID: 7056731541532948544, guid: dc0e3a0ce1612c045821a14a445d2cd2, type: 3}
   musicClips:
   - {fileID: 8300000, guid: 3bb7dec4a35fec6458222c93e9a59867, type: 3}
-  - {fileID: 8300000, guid: f7d0ab1c90257cc4db4ece3e3412ebad, type: 3}
-  - {fileID: 8300000, guid: 9b981c491e6503c409be346529b258d9, type: 3}

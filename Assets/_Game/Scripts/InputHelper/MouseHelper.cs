@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace _Game.InputHelper
 {
@@ -15,6 +16,8 @@ namespace _Game.InputHelper
         private Camera cam;
         private Camera Cam => cam == null ? cam = Camera.main : cam;
 
+        
+        public bool IsOverUI() => EventSystem.current.IsPointerOverGameObject();
         
         private void Awake()
         {
