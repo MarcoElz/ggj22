@@ -558,11 +558,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22d06da8a6904dcbaf6ef65d144f6170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 50
+  startHealth: 40
   deadParticles: {fileID: 5417032046544662148, guid: 77791f79358f9634d9bc9606e43ea500, type: 3}
   attackRange: 1.2
-  damageRate: 0.75
-  speed: 1
+  damageRate: 0.5
+  speed: 0.75
 --- !u!1 &5249057228622221506
 GameObject:
   m_ObjectHideFlags: 0

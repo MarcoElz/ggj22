@@ -22,9 +22,18 @@ namespace _Game.Utils
             
             RefreshArray();
         }
+
+        protected virtual void Start()
+        {
+            var allCurrentElements = FindObjectsOfType<T>();
+            foreach (var element in allCurrentElements) 
+                Add(element);
+        }
         
         public virtual void Add(T element)
         {
+            if(list.Contains(element)) return;
+            
             list.Add(element);
             RefreshArray();
         }

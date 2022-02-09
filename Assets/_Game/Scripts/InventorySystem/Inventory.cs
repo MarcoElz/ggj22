@@ -77,12 +77,12 @@ namespace _Game.InventorySystem
             for (int i = 0; i < transaction.resourceCosts.Length; i++)
             {
                 var resourceAmount = transaction.resourceCosts[i];
-                if(resourceAmount.amount >= 0) //Free or positive
+                if(resourceAmount.amount >= 0f) //Free or positive
                     continue;
                 
                 var currentResource = currentResources[resourceAmount.resource];
                 var resourceAfterTransaction = currentResource.Amount + resourceAmount.amount;
-                if (resourceAfterTransaction < 0) //Negative inventory, can not proceed
+                if (resourceAfterTransaction < 0f) //Negative inventory, can not proceed
                     return false;
             }
 

@@ -4,6 +4,7 @@ using _Game.InventorySystem;
 using _Game.ShopSystem;
 using _Game.Towers;
 using _Game.UI.Utils;
+using MEC;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -96,10 +97,12 @@ namespace _Game
             isGameOver = true;
             gameOverScreen.gameObject.SetActive(true);
             gameOverScreen.Show();
+            Timing.KillCoroutines();
         }
 
         public void Restart()
         {
+            UnPause();
             SceneManager.LoadScene(0);
         }
     }
