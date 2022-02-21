@@ -44,8 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22d06da8a6904dcbaf6ef65d144f6170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 50
+  startHealth: 70
   deadParticles: {fileID: 5417032046544662148, guid: 77791f79358f9634d9bc9606e43ea500, type: 3}
+  hurtParticles: {fileID: 2627643209001092941, guid: 4f9fa46dd928dee45b2e89e04930017d, type: 3}
   attackRange: 1.2
   damageRate: 1
   speed: 0.5

@@ -18,7 +18,7 @@ namespace _Game.GameResources
 
             probability += difficult * 5f;
 
-            int knowledgeDrop = Mathf.RoundToInt(probability / 75f);
+            int knowledgeDrop = Mathf.RoundToInt(probability / 60f);
             int metalDrop = Mathf.RoundToInt(probability / 50f);
 
             knowledgeDrop = Mathf.Clamp(knowledgeDrop, 0, 2);

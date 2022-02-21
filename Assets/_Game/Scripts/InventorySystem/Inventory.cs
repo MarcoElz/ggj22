@@ -4,6 +4,7 @@ using System.Linq;
 using _Game.GameResources;
 using _Game.ShopSystem;
 using Ignita.Utils.Common;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace _Game.InventorySystem
@@ -80,9 +81,14 @@ namespace _Game.InventorySystem
                 if(resourceAmount.amount >= 0f) //Free or positive
                     continue;
                 
+                //TODO: Mmm.. the problem of using floats. For some reason, it is removing a few decimals
+                // I have to round it, and use -Matfh.Epsilon to make it work correctly
                 var currentResource = currentResources[resourceAmount.resource];
-                var resourceAfterTransaction = currentResource.Amount + resourceAmount.amount;
-                if (resourceAfterTransaction < 0f) //Negative inventory, can not proceed
+                var currentAmount = Mathf.Round(currentResource.Amount);
+                
+                var resourceAfterTransaction = currentAmount + resourceAmount.amount;
+
+                if (resourceAfterTransaction < -Mathf.Epsilon) //Negative inventory, can not proceed
                     return false;
             }
 

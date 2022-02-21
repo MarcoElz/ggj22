@@ -10,6 +10,7 @@ namespace _Game.Creatures
     {
         [SerializeField] protected float startHealth = 100;
         [SerializeField] protected TimeParticles deadParticles = default;
+        [SerializeField] protected TimeParticles hurtParticles = default;
             
         public float Health { get; protected set; }
 
@@ -33,6 +34,8 @@ namespace _Game.Creatures
             Health -= amount;
             if (Health <= 0) 
                 Dead();
+            else
+                PoolManager.Spawn(hurtParticles, transform.position, Quaternion.identity);
         }
 
         protected virtual void Dead()
@@ -44,7 +47,7 @@ namespace _Game.Creatures
 
         protected virtual void Initialize()
         {
-            Health = startHealth  + (15f * Global.Difficult - 1f);
+            Health = startHealth  + (45f * (Global.Difficult - 1f));
             transform.localScale = Vector3.zero;
             transform.DOScale(Vector3.one, 0.5f);
         }

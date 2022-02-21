@@ -151,6 +151,8 @@ namespace _Game.UI.Towers
 
         private void OnActionButtonEntered(AbstractAction action)
         {
+            if(!action.HasTransaction) return;
+            
             transaction.Init(currentTower, action);
         }
 

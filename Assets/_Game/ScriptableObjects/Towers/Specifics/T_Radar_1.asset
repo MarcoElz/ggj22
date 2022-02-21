@@ -21,6 +21,6 @@ MonoBehaviour:
     - resource: {fileID: 11400000, guid: b83ddaf62256eea479574f2c83c80194, type: 2}
       amount: -25
   maxHealth: 100
-  newPrefab: {fileID: 7006343523652533256, guid: 1a148eebd134f414b8c8b65fd5108e30, type: 3}
+  newPrefab: {fileID: 0}
   checkRange: 12
   controlLabel: {fileID: 11400000, guid: 9e1759bdda27ab6469ba5f53aaf16cad, type: 2}

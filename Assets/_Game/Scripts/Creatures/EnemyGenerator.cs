@@ -53,7 +53,7 @@ namespace _Game.Creatures
 
         private void Spawn(EnemySpawnData spawnData)
         {
-            inventory.Consume(resource, spawnData.cost* 1.0f);
+            inventory.Consume(resource, spawnData.cost* 0.70f);
 
             var minDistance = 20f;
             var maxDistance = 30f;

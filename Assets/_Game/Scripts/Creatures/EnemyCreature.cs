@@ -69,13 +69,13 @@ namespace _Game.Creatures
             if(!isAttacking)
                 return;
             
-            var damageThisFrame = damageRate * Time.deltaTime;
+            var currentDamage = damageRate + (Global.Difficult * 0.2f);
+            var damageThisFrame = currentDamage * Time.deltaTime;
             Attack(currentTarget, damageThisFrame);
         }
 
         private void Attack(IDamageable target, float damageThisFrame)
         {
-            damageThisFrame += (Global.Difficult * 0.2f);
             target.Hurt(damageThisFrame);
         }
 

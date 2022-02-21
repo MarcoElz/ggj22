@@ -30,14 +30,12 @@ namespace _Game.Towers
 
         protected override void OnUpgraded()
         {
-            Debug.Log($"Upgraded start {UpgradeLevel}");
             base.OnUpgraded();
 
             var upgrades = CurrentData.UpgradedCapacity;
             foreach (var upgrade in upgrades) 
                 Global.Inventory.UpgradeCapacity(upgrade.resource, upgrade.amount);
 
-            Debug.Log($"Upgraded end {UpgradeLevel}");
         }
 
         protected override void Dead()

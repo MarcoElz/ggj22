@@ -20,7 +20,7 @@ MonoBehaviour:
       amount: 0
     - resource: {fileID: 11400000, guid: b83ddaf62256eea479574f2c83c80194, type: 2}
       amount: 0
-  maxHealth: 100
+  maxHealth: 5
   newPrefab: {fileID: 7056731541532948544, guid: dc0e3a0ce1612c045821a14a445d2cd2, type: 3}
   musicClips:
   - {fileID: 8300000, guid: 3bb7dec4a35fec6458222c93e9a59867, type: 3}
